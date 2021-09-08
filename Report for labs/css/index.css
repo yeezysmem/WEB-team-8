@@ -1,7 +1,7 @@
 body{
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-
+    align-items: center;
     font-size: 14px;
     line-height: 1.6;    font-family: 'Montserrat', sans-serif;
 }
@@ -9,7 +9,7 @@ body{
 /* Container */
 .container{
     width: 100%;
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 
@@ -42,7 +42,18 @@ body{
 
 }
 
+.selection {
+    position: absolute;
+    top: 150px;
+    border: black solid 1px;
+    padding: 10px;
+    width: 1500px;
+}
 
+.sel_lab {
+    border-bottom: black solid 1px;
+    height: 80px;
+}
 
 /* Nav */
 
