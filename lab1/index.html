@@ -1,54 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8store.ua</title>
-</head>
-<body>
-    <div>
-      <img src="images/mainbg.png" alt="" width=100%>
-    </div>
-    <div>
-      <a href="description.html"><h1>WEB application description</h1></a>
-    </div>
-    <div align="right">
-        <form action="/my-handling-form-page" method="post">
-            <ul>
-              <li>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="user_name">
-              </li>
-              <li>
-                <label for="mail">E-mail:</label>
-                <input type="email" id="mail" name="user_mail">
-              </li>
-              <li>
-                <label for="search">Search:</label>
-                <input type="text" id="search" name="search_request">
-                <input type="submit" name="find">
-              </li>
-            </ul>
-          </form>
-    </div>
-    <div>
-      <table border="1" height="400" width="400" align="center">
-        <caption>Pick a category</caption>
-        <tr align="center">
-          <td><img src="images/laptop.png" alt="" width=100%>Laptops</td>
-          <td><img src="images/pc.png" alt="" width=100%>PC's</td>
-          <td><img src="images/smartphone.png" alt="" width=100%>Smartphones</td>
-          <td><img src="images/ebook.png" alt="" width=100%>E-books</td>
-        </tr>
-        <tr>
-          <td><img src="images/monitor.png" alt="" width=100%>Monitors</td>
-          <td><img src="images/tablet.png" alt="" width=100%>Tablets</td>
-          <td><img src="images/headphones.png" alt="" width=100%>Headphones</td>
-          <td><img src="images/keyboard.png" alt="" width=100%>Keyboards</td>
-        </tr>
-      </table>
-    </div>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8store.ua</title>
+  <style>
+    /* Set a style for all images that are inside td */
+    td img {
+      max-width: 100%;
+      max-height: 230px;
+    }
     
+    /* Set a style for the submit button */
+    input[type=submit] {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: auto;
+    }
+    /* Change the submit button when the mouse hovers over it */
+    input[type=submit]:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="images/mainbg.png" alt="" width=100% 
+  style="display: block; margin: auto; width:80%">
+  
+  <a href="description.html" align="center"> <h3>  See our WEB application description </h3> </a>
+  
+  <div align="center">
+    <form action="/my-handling-form-page" method="post">
+      <ul>
+        <li>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name">
+        </li>
+        <li>
+          <label for="mail">E-mail:</label>
+          <input type="email" id="mail" name="user_mail">
+        </li>
+        <li>
+          <label for="search">Search:</label>
+          <input type="text" id="search" name="search_request">
+          <input type="submit" name="find" style="display: block;">
+        </li>
+      </ul>
+    </form>
+  </div>
+  
+  <div>
+    <table border="1" align=center
+    style="width: 80%; height: 50px; text-align:center; table-layout: fixed">
+    <caption> <h1>Pick a category</h1> </caption>
+    <tr>
+      <td><img src="images/laptop.png" alt=""> <p>Laptops</p> </td>
+      <td><img src="images/pc.png" alt=""> <p>PC's</p> </td>
+      <td><img src="images/smartphone.png" alt=""> <p>Smartphones</p> </td>
+      <td><img src="images/ebook.png" alt=""> <p>E-books</p> </td>
+    </tr>
+    <tr>
+      <td> <img src="images/monitor.png" alt=""> <p>Monitors</p> </td>
+      <td> <img src="images/tablet.png" alt=""> <p>Tablets</p> </td>
+      <td> <img src="images/headphones.png" alt=""> <p>Headphones</p> </td> 
+      <td> <img src="images/keyboard.png" alt=""> <p>Keyboards</p> </td> 
+    </tr>
+  </table>
+</div>
+
 </body>
 </html>
