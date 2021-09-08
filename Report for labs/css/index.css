@@ -14,8 +14,8 @@ body{
 }
 
 
-/* Header */
 
+/* Header */
 
 .header { 
     width: 100%;
@@ -42,8 +42,9 @@ body{
 
 }
 
-/* Nav */
 
+
+/* Nav */
 
 .nav {
     font-style: 14px;
@@ -86,4 +87,14 @@ body{
 .nav_link:hover:after{
     display: block;
     opacity: 1;
+}
+
+
+/* ---------------------------------- */
+
+.lab_title {
+    width: 30px; 
+    border: 2px solid green; 
+    padding: 3px;
+    margin: 3px;
 }
