@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>8store.ua</title>
   <style>
-    /* Set a style for all images that are inside td */
+    /* Style for all the images that are inside td */
     td img {
       max-width: 100%;
       max-height: 230px;
-      padding-top: 10px;
+      margin-top: 10px;
     }
     
-    /* Set a style for the submit button */
-    input[type=submit] {
+    /* Style for the submit button */
+    #submit_btn {
       background-color: #04AA6D;
       color: white;
       padding: 14px 20px;
@@ -23,9 +23,30 @@
       cursor: pointer;
       width: auto;
     }
-    /* Change the submit button when the mouse hovers over it */
-    input[type=submit]:hover {
-      opacity: 0.8;
+    #submit_btn:hover {
+      opacity: 0.8; /* Change the opacity when the mouse hovers over the button */
+    }
+    
+    /* Style for the button to go to all reports */
+    #go_to_all_labs_btn {
+      font-size: 16px;
+      
+      padding: 16px 32px;
+      margin-right: 10%;
+      
+      transition-duration: 0.1s;
+      cursor: pointer;
+      float: right;
+      
+      background-color: #f2fcff;;
+      border: 1px solid black;
+    }
+    #go_to_all_labs_btn:hover {
+      background-color: #d5f5ff;
+    }    
+    #go_to_all_labs_btn:active {
+      color: black;
+      background-color: #bef0ff;
     }
   </style>
 </head>
@@ -50,9 +71,11 @@
         <li>
           <label for="search">Search:</label>
           <input type="text" id="search" name="search_request">
-          <input type="submit" name="find" style="display: block;">
+          <input type="submit" id="submit_btn" name="find" style="display: block;">
         </li>
       </ul>
+      
+      
     </form>
   </div>
   
@@ -75,11 +98,14 @@
   </table>
 </div>
 
-<br /><br /><br />
-<a href="../Report for labs/html/index.html" align="right"> 
-  <p style="margin-right: 10%;"> Go to all labs </p> 
+<br/><br/><br/>
+<a href="../Report for labs/html/index.html"> 
+  <input type="submit" id="go_to_all_labs_btn" name="action"
+  value="Go to report.">
 </a>
-  
+
+<br/><br/><br/><br/>
+
 
 </body>
 </html>
