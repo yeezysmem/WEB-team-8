@@ -47,12 +47,15 @@ body{
     top: 150px;
     border: black solid 1px;
     padding: 10px;
-    width: 1500px;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .sel_lab {
     border-bottom: black solid 1px;
-    height: 80px;
+    height: 10%;
+
+    text-align: center;
 }
 
 /* Nav */
@@ -104,8 +107,12 @@ body{
 /* ---------------------------------- */
 
 .lab_title {
-    width: 30px; 
+    width: 90px; 
     border: 2px solid green; 
-    padding: 3px;
-    margin: 3px;
+    padding: 6px;
+    margin: 8px;
+    margin-bottom: 20px;
+
+    text-align: center;
+    display: inline-flex;
 }
