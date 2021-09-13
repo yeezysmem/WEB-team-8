@@ -1,9 +1,10 @@
-body{
+body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     align-items: center;
     font-size: 14px;
     line-height: 1.6;
+    background-color: #effbff;
 }
 
 /* Container */
@@ -93,11 +94,11 @@ body{
     transition: opacity .2s linear;
 }
 
-.nav_link:hover{
+.nav_link:hover {
     color: #2f00ff;
 }
 
-.nav_link:hover:after{
+.nav_link:hover:after {
     display: block;
     opacity: 1;
 }
@@ -105,7 +106,8 @@ body{
 
 /* ---------------------------------- */
 
-.lab_title {
+/* С прошлого дизайна */
+/* .lab_title {
     width: 90px; 
     border: 2px solid green; 
     padding: 6px;
@@ -114,4 +116,4 @@ body{
 
     text-align: center;
     display: inline-flex;
-}
+} */

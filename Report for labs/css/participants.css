@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+}
+
+table {
+    width: 95%;
+    margin: auto; /* Чтобы таблица была по центру */
+    border-spacing: 10px 0px;
+    
+    text-align: center; /* Чтобы внутри ячеек всё было по центру */
+    font-size: 130%;
+}
+
+thead, tbody {
+    background: #EBF5FB;
+}
+
+th {
+    width: 25%; /* Чтобы все колонки были одинаковой ширины */
+    font-weight: normal; /* Заголовки не жирные */
+}
+
+/* Чтобы изображения не изменяли ячейки таблицы */
+table img {
+    max-width: 100%;
+    max-height: 250px; 
+}
