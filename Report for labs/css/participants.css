@@ -1,21 +1,37 @@
 body {
     text-align: center;
+    background-color: #333339;
+    font-family: 'Montserrat', sans-serif;
+}
+h1 {
+    color: #fff;
+    padding-bottom: 60px;
+
+}
+
+h1 span {
+    color: #8D5CF6;
 }
 
 table {
     width: 95%;
     margin: auto; /* Чтобы таблица была по центру */
     border-spacing: 10px 0px;
-    
     text-align: center; /* Чтобы внутри ячеек всё было по центру */
-    font-size: 130%;
+    font-size: 18px;
+    font-weight: 300;
+    
 }
 
 thead, tbody {
-    background: #EBF5FB;
+    background: #2C2C33;
+    
 }
 
 th {
+   
+   color: #fff;
+    border-radius: 15px 15px 0 0;
     width: 25%; /* Чтобы все колонки были одинаковой ширины */
     font-weight: normal; /* Заголовки не жирные */
 }
@@ -24,4 +40,12 @@ th {
 table img {
     max-width: 100%;
     max-height: 250px; 
+    position: relative;
+    bottom: 0;
+    padding-bottom: 0;
+
+}
+td {
+    border-bottom: 20px solid #8D5CF6;
+    border-radius: 0 0 15px 15px;
 }
