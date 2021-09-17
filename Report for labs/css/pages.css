@@ -1,3 +1,11 @@
+body {
+    font-size: 1.25em;
+}
+
+h2 {
+    font-size: 1em;
+}
+
 .tag {
     font-family: "Courier New",Courier,mono;
     color: #069;
