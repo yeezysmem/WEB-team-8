@@ -23,7 +23,7 @@
       cursor: pointer;
       width: auto;
     }
-
+    
     #submit_btn:hover {
       opacity: 0.8; /* Change the opacity when the mouse hovers over the button */
     }
@@ -42,7 +42,7 @@
       background-color: #f2fcff;;
       border: 1px solid black;
     }
-
+    
     #go_to_all_labs_btn:hover {
       background-color: #d5f5ff;
     }  
@@ -51,7 +51,7 @@
       color: black;
       background-color: #bef0ff;
     }
-
+    
     /* Style for the list */
     li {
       list-style-type: none;
@@ -104,13 +104,24 @@
   </table>
 </div>
 
-<!-- <br><br><br>
-<a href="../Report for labs/html/index.html"> 
-  <input type="submit" id="go_to_all_labs_btn" name="action"
-  value="Go to reports.">
-</a>
+<br><br><br>
 
-<br><br><br><br> -->
+
+<!--
+  Первый способ:
+  <a href="../Report for labs/html/index.html"> 
+    <input type="submit" id="go_to_all_labs_btn" name="action"
+    value="Go to reports.">
+  </a>
+  
+  Второй способ:
+  <button type="button" onclick="history.back();" id="go_to_all_labs_btn">
+    Go to reports.
+  </button>
+  
+  <br><br><br><br>
+  
+-->
 
 
 </body>
