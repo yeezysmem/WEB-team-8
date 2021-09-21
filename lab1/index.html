@@ -1,117 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>8store.ua</title>
-  <style>
-    /* Style for all the images that are inside td */
-    td img {
-      max-width: 100%;
-      max-height: 230px;
-      margin-top: 10px;
-    }
-    
-    /* Style for the submit button */
-    #submit_btn {
-      background-color: #04AA6D;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: auto;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8store.ua</title>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!-- NORMALIZE CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css  "
+    />
+    <style>
+      /* Style for all the images that are inside td */
+      td img {
+        max-width: 100%;
+        max-height: 230px;
+        margin-top: 10px;
+      }
 
-    #submit_btn:hover {
-      opacity: 0.8; /* Change the opacity when the mouse hovers over the button */
-    }
-    
-    /* Style for the button to go to all reports */
-    #go_to_all_labs_btn {
-      font-size: 16px;
+      /* Style for the submit button */
+      #submit_btn {
+        background-color: #04aa6d;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: auto;
+      }
+
+      #submit_btn:hover {
+        opacity: 0.8; /* Change the opacity when the mouse hovers over the button */
+      }
+
+      /* Style for the button to go to all reports */
+      #go_to_all_labs_btn {
+        font-size: 16px;
+
+        padding: 16px 32px;
+        margin-right: 10%;
+
+        transition-duration: 0.1s;
+        cursor: pointer;
+        float: right;
+
+        background-color: #f2fcff;
+        border: 1px solid black;
+      }
+
+      #go_to_all_labs_btn:hover {
+        background-color: #d5f5ff;
+      }
+
+      #go_to_all_labs_btn:active {
+        color: black;
+        background-color: #bef0ff;
+      }
+
+      /* Style for the list */
+      li {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img
+      src="images/mainbg.png"
+      style="display: block; margin: auto; width: 100%; border-radius: 40px; margin-top: 40px; border: 1px solid #2c2f37;"
+    />
+    </div>
+<!-- 
+    <a href="description.html" align="center">
+      <h3>See our WEB application description</h3>
+    </a> -->
+
+    <!-- <div align="center">
+      <form action="/my-handling-form-page" method="post">
+        <ul>
+          <li>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" />
+          </li>
+          <li>
+            <label for="mail">E-mail:</label>
+            <input type="email" id="mail" name="user_mail" />
+          </li>
+          <li>
+            <label for="search">Search:</label>
+            <input type="text" id="search" name="search_request" />
+            <input
+              type="submit"
+              id="submit_btn"
+              name="find"
+              style="display: block"
+            />
+          </li>
+        </ul>
+      </form>
+    </div> -->
+    <section class="categories">
       
-      padding: 16px 32px;
-      margin-right: 10%;
-      
-      transition-duration: 0.1s;
-      cursor: pointer;
-      float: right;
-      
-      background-color: #f2fcff;;
-      border: 1px solid black;
-    }
+      <div class="container">
+        <h2>Categories</h2>
+        <div class="row" style="display: flex; justify-content: space-between; margin-top: 100px;">
+          
+          <div class="categories-item">
+            <div class="categories-item__content">
+              <div class="categories-item__content-name">Monitors</div>
+              <div class="categories-item__content-arrow">
+                <img src="images/arrow-right.svg" alt="">
+              </div>
+            </div>
+            <div class="categories-item__monitor">
+              <img src="images/monitor.png" alt="">
+            </div>
+          </div>
+          <div class="categories-item">
+            <div class="categories-item__content">
+              <div class="categories-item__content-name">Motherboards</div>
+              <div class="categories-item__content-arrow">
+                <img src="images/arrow-right.svg" alt="">
+              </div>
+            </div>
+            <div class="categories-item__motherboard">
+              <img src="images/Motherboard.png" alt="">
+            </div>
+          </div>
+          <div class="categories-item">
+            <div class="categories-item__content">
+              <div class="categories-item__content-name">Components</div>
+              <div class="categories-item__content-arrow">
+                <img src="images/arrow-right.svg" alt="">
+              </div>
+            </div>
+            <div class="categories-item__components">
+              <img src="images/Components.png" alt="">
+            </div>
+          </div>
+          <div class="categories-item">
+            <div class="categories-item__content">
+              <div class="categories-item__content-name">Laptops</div>
+              <div class="categories-item__content-arrow">
+                <img src="images/arrow-right.svg" alt="">
+              </div>
+            </div>
+            <div class="categories-item__laptop">
+              <img src="images/laptop.png" alt="">
+            </div>
+          </div>
+          <a href="/lab1/pages/pc.html">
+            <div class="categories-item" id="test">
+              <div class="categories-item__content">
+                <div class="categories-item__content-name">Desktop-PC</div>
+                <div class="categories-item__content-arrow">
+                  <img src="images/arrow-right.svg" alt="">
+                </div>
+              </div>
+              <div class="categories-item__pc">
+                <img src="images/Desktop-PC.png" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        
+      </div>
+    </section>
+    <section class="items">
 
-    #go_to_all_labs_btn:hover {
-      background-color: #d5f5ff;
-    }  
-    
-    #go_to_all_labs_btn:active {
-      color: black;
-      background-color: #bef0ff;
-    }
+    </section>
 
-    /* Style for the list */
-    li {
-      list-style-type: none;
-    }
-  </style>
-</head>
-
-<body>
-  <img src="images/mainbg.png"
-  style="display: block; margin: auto; width: 80%">
   
-  <a href="description.html" align="center"> <h3>  See our WEB application description </h3> </a>
-  
-  <div align="center">
-    <form action="/my-handling-form-page" method="post">
-      <ul>
-        <li>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="user_name">
-        </li>
-        <li>
-          <label for="mail">E-mail:</label>
-          <input type="email" id="mail" name="user_mail">
-        </li>
-        <li>
-          <label for="search">Search:</label>
-          <input type="text" id="search" name="search_request">
-          <input type="submit" id="submit_btn" name="find" style="display: block;">
-        </li>
-      </ul>  
-    </form>
-  </div>
-  
-  <div>
-    <table border="1" align=center
-    style="width: 80%; height: 50px; text-align:center; table-layout: fixed">
-    <caption> <h1>Pick a category</h1> </caption>
-    <tr>
-      <td><img src="images/laptop.png" alt=""> <p>Laptops</p> </td>
-      <td><img src="images/pc.png" alt=""> <p>PC's</p> </td>
-      <td><img src="images/smartphone.png" alt=""> <p>Smartphones</p> </td>
-      <td><img src="images/ebook.png" alt=""> <p>E-books</p> </td>
-    </tr>
-    <tr>
-      <td> <img src="images/monitor.png" alt=""> <p>Monitors</p> </td>
-      <td> <img src="images/tablet.png" alt=""> <p>Tablets</p> </td>
-      <td> <img src="images/headphones.png" alt=""> <p>Headphones</p> </td> 
-      <td> <img src="images/keyboard.png" alt=""> <p>Keyboards</p> </td> 
-    </tr>
-  </table>
-</div>
+     
 
-<!-- <br><br><br>
+    <!-- <br><br><br>
 <a href="../Report for labs/html/index.html"> 
   <input type="submit" id="go_to_all_labs_btn" name="action"
   value="Go to reports.">
 </a>
 
 <br><br><br><br> -->
-
-
-</body>
+  </body>
 </html>
