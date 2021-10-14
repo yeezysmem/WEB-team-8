@@ -1,101 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8store.ua</title>
-    <style>
-      /* Style for all the images that are inside td */
-      td img {
-        max-width: 100%;
-        max-height: 230px;
-        margin-top: 10px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8store.ua</title>
+  <style>
+    /* Style for all the images that are inside td */
+    td img {
+      max-width: 100%;
+      max-height: 230px;
+      margin-top: 10px;
+    }
+    
+    /* Style for the submit button */
+    #submit_btn {
+      background-color: #04aa6d;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: auto;
+    }
+    
+    #submit_btn:hover {
+      opacity: 0.8; /* Change the opacity when the mouse hovers over the button */
+    }
+    
+    /* Style for the button to go to all reports */
+    #go_to_all_labs_btn {
+      font-size: 16px;
+      
+      padding: 16px 32px;
+      margin-right: 10%;
+      
+      transition-duration: 0.1s;
+      cursor: pointer;
+      float: right;
+      
+      background-color: #f2fcff;
+      border: 1px solid black;
+    }
+    
+    #go_to_all_labs_btn:hover {
+      background-color: #d5f5ff;
+    }
+    
+    #go_to_all_labs_btn:active {
+      color: black;
+      background-color: #bef0ff;
+    }
+    
+    /* Style for the list */
+    li {
+      list-style-type: none;
+    }
+  </style>
+</head>
 
-      /* Style for the submit button */
-      #submit_btn {
-        background-color: #04aa6d;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: auto;
-      }
-
-      #submit_btn:hover {
-        opacity: 0.8; /* Change the opacity when the mouse hovers over the button */
-      }
-
-      /* Style for the button to go to all reports */
-      #go_to_all_labs_btn {
-        font-size: 16px;
-
-        padding: 16px 32px;
-        margin-right: 10%;
-
-        transition-duration: 0.1s;
-        cursor: pointer;
-        float: right;
-
-        background-color: #f2fcff;
-        border: 1px solid black;
-      }
-
-      #go_to_all_labs_btn:hover {
-        background-color: #d5f5ff;
-      }
-
-      #go_to_all_labs_btn:active {
-        color: black;
-        background-color: #bef0ff;
-      }
-
-      /* Style for the list */
-      li {
-        list-style-type: none;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="container">
-      <img
-      src="images/mainbg.png"
-      style="display: block; margin: auto; width: 100%; border-radius: 40px; margin-top: 40px; border: 1px solid #2c2f37;"
+<body>
+  <div class="container">
+    <img
+    src="images/mainbg.png"
+    style="display: block; margin: auto; width: 100%; border-radius: 40px; margin-top: 40px; border: 1px solid #2c2f37;"
     />
-    </div>
-
-    <a href="description.html" align="center">
-      <h3>See our WEB application description</h3>
-    </a> 
-
-    <div align="center">
-      <form action="/my-handling-form-page" method="post">
-        <ul>
-          <li>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="user_name" />
-          </li>
-          <li>
-            <label for="mail">E-mail:</label>
-            <input type="email" id="mail" name="user_mail" />
-          </li>
-          <li>
-            <label for="search">Search:</label>
-            <input type="text" id="search" name="search_request" />
-            <input
-              type="submit"
-              id="submit_btn"
-              name="find"
-              style="display: block"
-            />
-          </li>
-        </ul>
-      </form>
-    </div> 
-    <!-- <section class="categories">
+  </div>
+  
+  <a href="description.html" align="center">
+    <h3>See our WEB application description</h3>
+  </a> 
+  
+  <div align="center">
+    <form action="/my-handling-form-page" method="post">
+      <ul>
+        <li>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name" />
+        </li>
+        <li>
+          <label for="mail">E-mail:</label>
+          <input type="email" id="mail" name="user_mail" />
+        </li>
+        <li>
+          <label for="search">Search:</label>
+          <input type="text" id="search" name="search_request" />
+          <input
+          type="submit"
+          id="submit_btn"
+          name="find"
+          style="display: block"
+          />
+        </li>
+      </ul>
+    </form>
+  </div> 
+  
+<!-- <section class="categories">
       
       <div class="container">
         <h2>Categories</h2>
@@ -163,18 +164,18 @@
       </div>
     </section>
     <section class="items">
-
-    </section> -->
-
-  
-     
-
-    <!-- <br><br><br>
-<a href="../Report for labs/html/index.html"> 
-  <input type="submit" id="go_to_all_labs_btn" name="action"
-  value="Go to reports.">
-</a>
-
-<br><br><br><br> -->
-  </body>
-</html>
+          
+      </section> -->
+      
+      
+      
+      <!-- <br><br><br>
+        <a href="../Report for labs/html/index.html"> 
+          <input type="submit" id="go_to_all_labs_btn" name="action"
+          value="Go to reports.">
+        </a>
+        
+        <br><br><br><br> -->
+      </body>
+      </html>
+      
