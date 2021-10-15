@@ -17,6 +17,7 @@ a {
 
 h2 {
     font-size: 1em;
+    text-decoration: underline;
 }
 
 .tag {
@@ -62,7 +63,7 @@ dd {
 }
 
 dl.param dt {
-    color: #b2a1ff;
+    color: #f1dcff;
     float: left;
 }
 

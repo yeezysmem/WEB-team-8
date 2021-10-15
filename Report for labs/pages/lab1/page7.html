@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/pages.css">
+    <title>ФОРМА</title>
+</head>
+<body>
+    <h2> 
+        HTML-код ФОРМИ:
+    </h2>
+    <xmp>
+        <form action="/my-handling-form-page" method="post">
+            <ul>
+                <li>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name">
+                </li>
+                <li>
+                    <label for="mail">E-mail:</label>
+                    <input type="email" id="mail" name="user_mail">
+                </li>
+                <li>
+                    <label for="search">Search:</label>
+                    <input type="text" id="search" name="search_request">
+                    <input type="submit" id="submit_btn" name="find" style="display: block;">
+                </li>
+            </ul>  
+        </form>
+    </xmp>
+    
+    <h2>
+        Скріншот ФОРМИ:
+    </h2>
+    <center>
+        <img src="../../img, etc/lab1 screenshots/screen_form.png" width=50%>
+    </center>    
+    
+    
+    <h2>
+        Теоретичні відомості:
+    </h2>
+    <h3>Форма</h3>
+
+    <p> Тег 
+        <span class="tag">&lt;form&gt;</span> 
+        створює форму на веб-сторінці.
+    </p>
+    
+    <p>Документ може містити будь-яку кількість форм, але одночасно на сервер може
+        бути відправлена тільки одна форма. Тому дані форм повинні бути незалежні
+        між собою.
+    </p>
+    
+    <p>Для відправки форми на сервер використовується кнопка Submit. Того ж можна
+        досягти, якщо натиснути клавішу
+        <span class = "button">Enter</span>
+        в межах форми. 
+        Якщо кнопка Submit відсутня в формі, то клавіша
+        <span class = "button">Enter</span>
+        імітує її використання.
+    </p>
+    
+    <p>Коли форма відправляється на сервер, управління даними передається програмі,
+        заданої атрибутом <span class="attribute">action</span> тега <span class="tag">&lt;form&gt;</span>. 
+        Заздалегідь браузер готує інформацію у вигляді пари «ім'я = значення», 
+        де ім'я визначається атрибутом <span class="attribute">name</span> тега <span class="tag">&lt;input&gt;</span>, 
+        а значення введено користувачем або встановлено в поле форми за замовчуванням.
+    </p>
+    
+    <p>Допускається поміщати інші теги всередину контейнера 
+        <span class="tag">&lt;form&gt;</span>,
+        при цьому сама форма ніяк не відображається на веб-сторінці, а 
+        видно тільки її елементи та результати вкладених тегів.
+    </p>
+
+       
+    <h4>Атрибути <span class="tag">&lt;form&gt;</span></h4>
+    <dl class="param">
+        <dt>accept-charset</dt>
+        <dd>Встановлює кодування, в якій сервер може приймати та обробляти дані.</dd>
+        
+        <dt>action</dt>
+        <dd>Адреса програми або документа, який обробляє дані форми. </dd>
+        
+        <dt>autocomplete</dt>
+        <dd>Включає автозаповнення полів форми.</dd>
+        
+        <dt>enctype</dt>
+        <dd>Спосіб кодування даних форми.</dd>
+        
+        <dt>method</dt>
+        <dd>Метод протоколу HTTP.</dd>
+        
+        <dt>name</dt>
+        <dd>Ім'я форми.</dd>
+        
+        <dt>novalidate</dt>
+        <dd>Скасовує вбудовану перевірку даних форми на коректність введення.</dd>
+        
+        <dt>target</dt>
+        <dd>Ім'я вікна або фрейму, куди обробник буде завантажувати повертається результат.</dd>
+    </dl>
+    
+    
+</body>
+</html>
