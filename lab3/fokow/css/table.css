@@ -1,0 +1,23 @@
+h1.white {
+    color: white;
+}
+
+h1.black {
+    color: black;
+}
+
+table, td {
+    border-collapse: collapse;
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+/* Number 4 alignment */
+#bigpadding  {
+    vertical-align: top;
+}
+
+#bigpadding h1 {
+    margin-top: 200px;
+}

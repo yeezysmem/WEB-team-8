@@ -1,0 +1,96 @@
+/* Borders */
+.outerborder {
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  border: 2px solid black;
+}
+.main, .header1, .left2, .top5, .middle4, .footer3  {
+  box-sizing: border-box;
+  border: 1px solid black;
+  
+  /* Vertial text alignment: */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+  /* Padding-left */
+  padding-left: 20px;
+}
+
+
+/* Floating divs: */
+
+.leftbar {
+  float: left;
+  width: 10%;
+  height: 100px;
+  margin-left: -2px;
+}
+.main {
+  padding: 0;
+  width: calc(80% + 4px);
+  float: left;
+  color: white;
+}
+
+.header1 {
+  background: #2B60DE;
+  height: 150px;
+  margin-top: -2px;
+}
+
+.centralarea {
+  color: black;
+}
+.left2, .rightcontainer {
+  float: left;
+  height: 950px;
+}
+.left2 {
+  width: 20%;
+  background: #FDD017;
+}
+.rightcontainer {
+  width: 80%;
+}
+
+/* Variable declaration: height of .top5 */
+:root {
+  --height-top5: 150px;
+}
+.top5 {
+  background: #FDD017;
+  height: var(--height-top5);
+}
+.middle4 {
+  background: white;
+  height: calc(100% - var(--height-top5));
+}
+
+.footer3 {
+  background: #2B60DE;
+  height: 150px;
+  margin-bottom: -1px;
+}
+
+
+
+/* Clearfix */
+.clearfix:after {
+  clear: both;
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+}
+
+/* Number 4 alignment */
+#bigpadding {
+  display: block;
+}
+
+#bigpadding h1 {
+  display: block;
+  margin-top: 200px;
+}
