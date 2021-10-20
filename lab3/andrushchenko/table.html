@@ -1,34 +1,41 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Табличная вёрстка</title>
-    <meta charset="UTF-8">
-</head>
-<body>
-<table border="1" cellpadding="0" cellspacing="0" width="100%">
-    <tr>
-        <th colspan=3>шапка сайта (логотип, слоган, телефон)</th>
-    </tr>
-    <tr>
-        <th width="15%">навигация</th>
-        <th width="70%">заголовок</th>
-        <th width="15%">новини</th>
-    </tr>
-    <tr>
-        <td width="15%">
-            <ul>
-                <li><a href="tab.html" title="Ссылка 1">Ссылка 1</a></li>
-                <li><a href="tab.html" title="Ссылка 2">Ссылка 2</a></li>
-                <li><a href="tab.html" title="Ссылка 3">Ссылка 3</a></li>
-            </ul>
-        </td>
-        <td width="70%">Контент</td>
-        <td width="15%"></td>
+<html lang="en">
 
-    </tr>
-    <tr>
-        <td colspan=3>Футер</td>
-    </tr>
-</table>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/table_style.css">
+    <title>Table</title>
+</head>
+
+<body>
+    <table class="outer-table">
+        <tr>
+            <td align="right" class="bg--yellow outer-table__top" colspan="3">1
+                <div />
+                <span></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1" class="bg--blue side-block">2</td>
+            <td colspan="2">
+                <table class="inner-table">
+                    <tr class="inner-table__top">
+                        <td class="bg--red" colspan="2">
+                            3
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="bg--blue side-block">5</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="bg--yellow outer-table__bottom" colspan="3">6</td>
+        </tr>
+    </table>
 </body>
 </html>
