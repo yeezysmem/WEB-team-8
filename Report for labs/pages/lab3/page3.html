@@ -10,27 +10,58 @@
     
     
     <h3> Андрущенко Ярослав – Варіант 2 </h3>    
-    <h3> С помощью таблиц </h3> 
-    <img src="../../img, etc/lab3 screenshots/">
+    <h3> С помощью таблиц </h3>
+    <h4 style="text-align: center;">HTML-код</h4>
+    <xmp>
+        
+    </xmp>
+    <h4 style="text-align: center;">CSS-код</h4>
+    <xmp>
+        
+    </xmp>
+    
     <h3> С помощью плавающих блоков </h3>
-    <img src="../../img, etc/lab3 screenshots/">
+    <h4 style="text-align: center;">HTML-код</h4>
+    <xmp>
+        
+    </xmp>
+    <h4 style="text-align: center;">CSS-код</h4>
+    <xmp>
+        
+    </xmp>
     <br /> <hr />
     
-
-
+    
+    
     
     <h3> Толубко Володимир – Варіант 7 </h3>
-    <h3> С помощью таблиц </h3> 
-    <img src="../../img, etc/lab3 screenshots/">
+    <h3> С помощью таблиц </h3>
+    <h4 style="text-align: center;">HTML-код</h4>
+    <xmp>
+        
+    </xmp>
+    <h4 style="text-align: center;">CSS-код</h4>
+    <xmp>
+        
+    </xmp>
+    
     <h3> С помощью плавающих блоков </h3>
-    <img src="../../img, etc/lab3 screenshots/">
+    <h4 style="text-align: center;">HTML-код</h4>
+    <xmp>
+        
+    </xmp>
+    <h4 style="text-align: center;">CSS-код</h4>
+    <xmp>
+        
+    </xmp>
     <br /> <hr />
     
-
-
+    
+    
     
     <h3> Фоков Володимир – Варіант 8 </h3>
     <h3> С помощью таблиц </h3>
+    <h4 style="text-align: center;">HTML-код</h4>
     <xmp>
         <table width = "100%" valign="middle">
             
@@ -70,7 +101,53 @@
             
         </table>
     </xmp>
+    
+    <h4 style="text-align: center;">CSS-код</h4>
+    <xmp>
+        /* Shared styles */
+        body {
+            background: white;
+            margin: 0px;
+        }
+        
+        h1 {
+            font-size: 50px;
+            margin-left: 100px;
+        }
+        
+        #bigpadding {
+            padding-left: 80px;
+        }
+        
+        /* Table styles */
+        h1.white {
+            color: white;
+        }
+        
+        h1.black {
+            color: black;
+        }
+        
+        table, td {
+            border-collapse: collapse;
+            border: 2px solid black;
+            box-sizing: border-box;
+            padding-left: 20px;
+        }
+        
+        /* Number 4 alignment */
+        #bigpadding  {
+            vertical-align: top;
+        }
+        
+        #bigpadding h1 {
+            margin-top: 200px;
+        }
+    </xmp>
+    
+    
     <h3> С помощью плавающих блоков </h3>
+    <h4 style="text-align: center;">HTML-код</h4>
     <xmp>
         <div class="outerborder">
             
@@ -104,16 +181,146 @@
             
         </div>
     </xmp>
+    
+    <h4 style="text-align: center;">CSS-код</h4>
+    <xmp>
+        /* Shared styles */
+        body {
+            background: white;
+            margin: 0px;
+        }
+        
+        h1 {
+            font-size: 50px;
+            margin-left: 100px;
+        }
+        
+        #bigpadding {
+            padding-left: 80px;
+        }
+        
+        /* Borders */
+        .outerborder {
+            box-sizing: border-box;
+            width: 100%;
+            float: left;
+            border: 2px solid black;
+        }
+        .main, .header1, .left2, .top5, .middle4, .footer3  {
+            box-sizing: border-box;
+            border: 1px solid black;
+            
+            /* Vertial text alignment: */
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            
+            /* Padding-left */
+            padding-left: 20px;
+        }
+        
+        
+        /* Floating divs: */
+        
+        .leftbar {
+            float: left;
+            width: 10%;
+            height: 100px;
+            margin-left: -2px;
+        }
+        .main {
+            padding: 0;
+            width: calc(80% + 4px);
+            float: left;
+            color: white;
+        }
+        
+        .header1 {
+            background: #2B60DE;
+            height: 150px;
+            margin-top: -2px;
+        }
+        
+        .centralarea {
+            color: black;
+        }
+        .left2, .rightcontainer {
+            float: left;
+            height: 950px;
+        }
+        .left2 {
+            width: 20%;
+            background: #FDD017;
+        }
+        .rightcontainer {
+            width: 80%;
+        }
+        
+        /* Variable declaration: height of .top5 */
+        :root {
+            --height-top5: 150px;
+        }
+        .top5 {
+            background: #FDD017;
+            height: var(--height-top5);
+        }
+        .middle4 {
+            background: white;
+            height: calc(100% - var(--height-top5));
+        }
+        
+        .footer3 {
+            background: #2B60DE;
+            height: 150px;
+            margin-bottom: -1px;
+        }
+        
+        
+        
+        /* Clearfix */
+        .clearfix:after {
+            clear: both;
+            content: "";
+            visibility: hidden;
+            display: block;
+            height: 0;
+        }
+        
+        /* Number 4 alignment */
+        #bigpadding {
+            display: block;
+        }
+        
+        #bigpadding h1 {
+            display: block;
+            margin-top: 200px;
+        }
+    </div>
     <br /> <hr />
     
-
-
+    
+    
     
     <h3> Жданов Даніїл – Варіант ? </h3>
-    <h3> С помощью таблиц </h3> 
-    <img src="../../img, etc/lab3 screenshots/">
+    <h3> С помощью таблиц </h3>
+    <h4 style="text-align: center;">HTML-код</h4>
+    <xmp>
+        
+    </xmp>
+    <h4 style="text-align: center;">CSS-код</h4>
+    <xmp>
+        
+    </xmp>
+    
     <h3> С помощью плавающих блоков </h3>
-    <img src="../../img, etc/lab3 screenshots/">
+    <h4 style="text-align: center;">HTML-код</h4>
+    <xmp>
+        
+    </xmp>
+    <h4 style="text-align: center;">CSS-код</h4>
+    <xmp>
+        
+    </xmp>
     <br /> <hr />
     
     
