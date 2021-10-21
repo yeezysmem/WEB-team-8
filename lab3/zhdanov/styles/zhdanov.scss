@@ -1,0 +1,27 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+.header {
+    width: 100%;
+    height:100px;
+    background-color: blue;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    div {
+        width: 100%;
+        height: 600px;
+    }
+}
+.footer {
+    background-color: blue;
+    width: 100%;
+    height: 100px;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
