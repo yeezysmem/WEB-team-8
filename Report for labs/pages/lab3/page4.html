@@ -3,100 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/pages.css">
-    <title> Висновки </title>
+    <title> Web site </title>
 </head>
 <body>
-    <h2> Висновки (спільні): </h2>
-    <p>
-        Способ вёрстки, основанный на таблицах, не неправильный, но не рекомендуется. <br />
-        В общем случае таблицы следует использовать не для вёрстки страниц, а для отображения табличных данных на страницах.
-    </p>
-    <p>
-        Вёрстка, на div-ах со свойством float - наиболее используемый и рекомендуемый способ создания макетов страниц. <br />
-        Альтернативно, для создания современных гибких макетов также используют flexbox (в CSS3).
-    </p> <br /> <hr />
     
+    <h2> Посилання на сайт: </h2>
+    <a href="../../../lab3/website/index.html" target="_blank">
+        Інтернет-магазин електроніки.
+    </a> <br />
     
+    <h2> Скріншот: </h2>
+    <img src="../../img, etc/lab3 screenshots/website-screenshot.png" width=90%/> <br />
     
-    
-    
-    <h2> Висновки (Андрущенко Ярослав): </h2>
-    <p>
-        На цій лабораторній роботі ми навчилися будувати макети HTML-сторінок за допомогою таблиць та плаваючих блоків. В ході виконання роботи побудували два макети HTML-сторінки цими двома способами. Також під час виконання лабораторної роботи були використані знання, здобуті під час виконання лабораторної роботи №2, а саме використовували селектори класів та тегів, ідентифікатори, різноманітні фонові кольори та відступи.
-    </p> <br /> <hr />
-    
-    
-    
-    
-    
-    
-    
-    <h2> Висновки (Толубко Володимир): </h2>
-    <p>
-        ##############
-    </p> <br /> <hr />
-    
-    
-    
-    
-    
-    
-    
-    <h2> Висновки (Фоков Володимир): </h2>
-    
-    <h3 style="text-align: center; text-decoration: underline;">
-        Вёрстка, основанная на таблицах 
-    </h3>
-    <h4>Преимущества:</h4>
-    <ul style="list-style-type: none">
-        <li> - её простота для верстальщика </li>
-        <li> - не нужно больших знаний CSS </li>
-    </ul>
-    
-    <h4>Недостатки:</h4>
-    <ul style="list-style-type: none">
-        <li> - большой минус - громоздкость итогового html-кода и связанная с этим плохая читаемость кода </li>
-        <li> - прогрузка верстки каждой страницы идёт полностью и независимо от остальных страниц этого сайта </li>
-        <li> - некоторые браузеры не показывают таблицу, пока не загружен тег её закрытия. Таким образом, пока не загрузится весь текст страницы, вы будете видеть только фоновый цвет </li>
-    </ul>
-    
-    
-    <h3 style="text-align: center; text-decoration: underline;">
-        Вёрстка, основанная на тегах со свойством float 
-    </h3>
-    <h4>Преимущества:</h4>
-    <ul style="list-style-type: none">
-        <li> - простота html-кода </li>
-        <li> 
-            - CSS-файл загружается один раз за всё время посещения сайта - для многих страниц. 
-            Следовательно, в целом скорость загрузки страниц будет более высокой. 
-        </li>
-        <li> - Страница показывается пользователю по мере загрузки </li>
-        <li> - Можно поменять макет для всех страниц сайта одновременно, отредактировав всего лишь один CSS-файл </li>
-        <li> 
-            - Легко добавить дополнительные внутренний блоки, в то время как в таблице пришлось бы
-            добавлять дополнительный ряд/колонку и редактировать rowspan и colspan многих других элементов
-            таблицы
-        </li>
-    </ul>
-    
-    <h4>Недостатки:</h4>
-    <ul style="list-style-type: none">
-        <li> - необходимость достаточно глубоких знаний CSS </li>
-        <li> - для корректного отображение во всех браузерах выходит ещё больше css-кода </li>
-    </ul>
-    <br /> <hr />
-    
-    
-    
-    
-    
-    
-    
-    <h2> Висновки (Жданов Даніїл): </h2>
-    <p>
-        ##############
-    </p> <br />
+    <h2> HTML-програмний код макету власного сайту: </h2>
+    <xmp>
+        <div class="container">
+            <img
+            src="images/mainbg.png"
+            style="display: block; margin: auto; width: 100%; border-radius: 40px; margin-top: 40px; border: 1px solid #2c2f37;"
+            />
+        </div>
+        <section class="categories">
+            
+            <div class="container">
+                <h2>Categories</h2>
+                <div class="row" style="display: flex; justify-content: space-between; margin: 100px 0;">
+                    
+                    <div class="categories-item">
+                        <div class="categories-item__content">
+                            <div class="categories-item__content-name">Monitors</div>
+                            <div class="categories-item__content-arrow">
+                                <img src="images/arrow-right.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="categories-item__monitor">
+                            <img src="images/monitor.png" alt="">
+                        </div>
+                    </div>
+                    <div class="categories-item">
+                        <div class="categories-item__content">
+                            <div class="categories-item__content-name">Motherboards</div>
+                            <div class="categories-item__content-arrow">
+                                <img src="images/arrow-right.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="categories-item__motherboard">
+                            <img src="images/Motherboard.png" alt="">
+                        </div>
+                    </div>
+                    <div class="categories-item">
+                        <div class="categories-item__content">
+                            <div class="categories-item__content-name">Components</div>
+                            <div class="categories-item__content-arrow">
+                                <img src="images/arrow-right.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="categories-item__components">
+                            <img src="images/Components.png" alt="">
+                        </div>
+                    </div>
+                    <div class="categories-item">
+                        <div class="categories-item__content">
+                            <div class="categories-item__content-name">Laptops</div>
+                            <div class="categories-item__content-arrow">
+                                <img src="images/arrow-right.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="categories-item__laptop">
+                            <img src="images/laptop.png" alt="">
+                        </div>
+                    </div>
+                    <a href="/lab1/pages/pc.html">
+                        <div class="categories-item" id="test">
+                            <div class="categories-item__content">
+                                <div class="categories-item__content-name">Desktop-PC</div>
+                                <div class="categories-item__content-arrow">
+                                    <img src="images/arrow-right.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="categories-item__pc">
+                                <img src="images/Desktop-PC.png" alt="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+        <section class="items">
+            
+        </section>
+        
+    </xmp> <br />
     
     
 </body>

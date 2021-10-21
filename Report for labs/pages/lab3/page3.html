@@ -28,21 +28,115 @@
     <h3> С помощью таблиц </h3>
     <h4 style="text-align: center;">HTML-код</h4>
     <xmp>
-        
+        <table height="800px" width = "30%" align="center">
+            
+            <tr class="one" height="20%">
+                
+                <td colspan = "3">
+                    <h1>1</h1>
+                </td>
+                
+            </tr>
+            
+            <tr height="60%">
+                
+                <td class="two" width="30%">
+                    <h1>2</h1>
+                </td>
+                
+                <td class="four" width="40%">
+                    <h1>4</h1>
+                </td>
+                
+                <td class="five" width="30%">
+                    <h1>5</h1>
+                </td>
+                
+            </tr>
+            
+            <tr height = "20%">
+                
+                <td class="three" colspan = "3">
+                    <h1>3</h1>
+                </td>
+                
+            </tr>
+            
+        </table>    
     </xmp>
     <h4 style="text-align: center;">CSS-код</h4>
     <xmp>
+        td {
+            border: 1px black solid;
+            text-align: center;
+        }
         
+        .one, .three {
+            background-color: rgb(48, 48, 247);
+        }
+        
+        .two, .five{
+            background-color: rgb(235, 197, 29);
+        }
+        
+        .four {
+            background-color: #fff;
+        }        
     </xmp>
     
     <h3> С помощью плавающих блоков </h3>
     <h4 style="text-align: center;">HTML-код</h4>
     <xmp>
-        
+        <div class="container">
+            <div id="one">1</div>
+            <div class="section two">2</div>
+            <div class="section four">4</div>
+            <div class="section five">5</div>
+            <div id="three">3</div>
+        </div>
     </xmp>
     <h4 style="text-align: center;">CSS-код</h4>
     <xmp>
+        .container {
+            
+        }
         
+        div {
+            text-align: center;
+            text-transform: uppercase;
+            padding: 40px 0;
+            color: #000;
+        }
+        
+        .section {
+            float: left;
+            height: 200px;
+            margin-bottom: 10px;
+            height: 500px;
+        }
+        
+        .two, .five{
+            float: left;
+            width: 10%;
+            
+            background-color: rgb(235, 197, 29);
+            
+        }
+        
+        .four {
+            float: left;
+            width: 20%;
+            background-color: #fff;
+            
+        }
+        
+        #one, #three {
+            clear: left;
+            width: 40%;
+            height: 40px;
+            background-color: rgb(48, 48, 247);
+            margin: 10px 0;
+        }
     </xmp>
     <br /> <hr />
     
@@ -304,24 +398,24 @@
             <div class="container">
                 <table width="100%" cellspacing="0" cellpadding="5" id="content">
                     <tr> 
-                     <td width="33.3%" valign="top" style="background-color: yellow;">
-                         5
-                     </td>
-                     <td width="33.3%" valign="top" style="background-color: white;">
-                       4
-                    </td>
-                    <td width="33.3%" valign="top" style="background-color: yellow;">
-                        2
-                    </td>
+                        <td width="33.3%" valign="top" style="background-color: yellow;">
+                            5
+                        </td>
+                        <td width="33.3%" valign="top" style="background-color: white;">
+                            4
+                        </td>
+                        <td width="33.3%" valign="top" style="background-color: yellow;">
+                            2
+                        </td>
                     </tr>
                 </table>
             </div>
             <table width="100%" cellspacing="0" cellpadding="5" id="footer">
                 <tr> 
-                 <td style="text-align: center;" width="100%" valign="bottom">5</td>
+                    <td style="text-align: center;" width="100%" valign="bottom">5</td>
                 </tr>
             </table>
-           </div>
+        </div>
     </xmp>
     <h4 style="text-align: center;">CSS-код</h4>
     <xmp>
@@ -331,39 +425,39 @@
             color: #000;
         }
         #header {
-         width: 100%;
-         height: 80px;
-         background-color: blue;
-         color: #000; /* Ширина всей таблицы в процентах */
+            width: 100%;
+            height: 80px;
+            background-color: blue;
+            color: #000; /* Ширина всей таблицы в процентах */
         }
         #header TD {
-         vertical-align: top;
-         
+            vertical-align: top;
+            
         }
         TD#leftcol {
-         width: 200px; /* Ширина левой колонки в пикселах */
+            width: 200px; /* Ширина левой колонки в пикселах */
         }
         #footer {
-         width: 100%;
-         height: 80px;
-         background-color: blue; /* Ширина всей таблицы в процентах */
+            width: 100%;
+            height: 80px;
+            background-color: blue; /* Ширина всей таблицы в процентах */
         }
         #footer TD {
-        padding-top: 30px;
-         vertical-align: top; /* Вертикальное выравнивание в ячейках */
+            padding-top: 30px;
+            vertical-align: top; /* Вертикальное выравнивание в ячейках */
         }
         TD#leftcol {
-         width: 200px; /* Ширина левой колонки в пикселах */
+            width: 200px; /* Ширина левой колонки в пикселах */
         }
         #content {
-         width: 100%;
-         height: 600px; /* Ширина всей таблицы в процентах */
+            width: 100%;
+            height: 600px; /* Ширина всей таблицы в процентах */
         }
         #content TD {
-         vertical-align: top; /* Вертикальное выравнивание в ячейках */
+            vertical-align: top; /* Вертикальное выравнивание в ячейках */
         }
         TD#leftcol {
-         width: 200px; /* Ширина левой колонки в пикселах */
+            width: 200px; /* Ширина левой колонки в пикселах */
         }
         .container {
             max-width: 1200px;
@@ -376,12 +470,12 @@
     <xmp>
         <div class="container">
             <div class="header">1</div>
-        <div class="content">
-            <div style="background-color: yellow;">5</div>
-            <div>4</div>
-            <div style="background-color: yellow;">2</div>
-        </div>
-        <div class="footer">3</div>
+            <div class="content">
+                <div style="background-color: yellow;">5</div>
+                <div>4</div>
+                <div style="background-color: yellow;">2</div>
+            </div>
+            <div class="footer">3</div>
         </div>
     </xmp>
     <h4 style="text-align: center;">CSS-код</h4>
@@ -389,38 +483,38 @@
         body {
             padding: 0;
             margin: 0;
-          }
-          
-          .header {
+        }
+        
+        .header {
             width: 100%;
             height: 100px;
             background-color: blue;
-          }
-          
-          .content {
+        }
+        
+        .content {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
             -webkit-box-pack: justify;
-                -ms-flex-pack: justify;
-                    justify-content: space-between;
-          }
-          
-          .content div {
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+        
+        .content div {
             width: 100%;
             height: 600px;
-          }
-          
-          .footer {
+        }
+        
+        .footer {
             background-color: blue;
             width: 100%;
             height: 100px;
-          }
-          
-          .container {
+        }
+        
+        .container {
             width: 1200px;
             margin: 0 auto;
-          }
+        }
     </xmp>
     <br /> <hr />
     
