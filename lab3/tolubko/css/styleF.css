@@ -1,0 +1,40 @@
+.container {
+    
+}
+
+div {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 40px 0;
+    color: #000;
+}
+
+.section {
+    float: left;
+    height: 200px;
+    margin-bottom: 10px;
+    height: 500px;
+}
+
+.two, .five{
+    float: left;
+    width: 10%;
+
+    background-color: rgb(235, 197, 29);
+
+}
+
+.four {
+    float: left;
+    width: 20%;
+    background-color: #fff;
+
+}
+
+#one, #three {
+    clear: left;
+    width: 40%;
+    height: 40px;
+    background-color: rgb(48, 48, 247);
+    margin: 10px 0;
+}
