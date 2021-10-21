@@ -8,15 +8,17 @@
         body {
             padding: 0;
             margin: 0;
+            color: #000;
         }
         #header {
          width: 100%;
          height: 80px;
-         background-color: #fff;
+         background-color: blue;
          color: #000; /* Ширина всей таблицы в процентах */
         }
         #header TD {
-         vertical-align: top; /* Вертикальное выравнивание в ячейках */
+         vertical-align: top;
+         
         }
         TD#leftcol {
          width: 200px; /* Ширина левой колонки в пикселах */
@@ -24,8 +26,7 @@
         #footer {
          width: 100%;
          height: 80px;
-         background-color: rgb(126, 119, 119);
-         color: aliceblue; /* Ширина всей таблицы в процентах */
+         background-color: blue; /* Ширина всей таблицы в процентах */
         }
         #footer TD {
         padding-top: 30px;
@@ -35,11 +36,8 @@
          width: 200px; /* Ширина левой колонки в пикселах */
         }
         #content {
-        padding-top: 20px;
-        padding-bottom: 20px;
          width: 100%;
-         background-color: #000;
-         color: aliceblue; /* Ширина всей таблицы в процентах */
+         height: 600px; /* Ширина всей таблицы в процентах */
         }
         #content TD {
          vertical-align: top; /* Вертикальное выравнивание в ячейках */
@@ -47,42 +45,40 @@
         TD#leftcol {
          width: 200px; /* Ширина левой колонки в пикселах */
         }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
        </style>
 </head>
 <body>
+   <div class="container">
     <table width="100%" cellspacing="0" cellpadding="5" id="header">
-        <tr> 
-         <td width="100%" valign="top">MyAPP</td>
-         <td width="100%" valign="top">Logo</td>
-         <td width="100%" valign="top">Logo</td>
-         <td width="100%" valign="top">Logo</td>
-         <td width="100%" valign="top">Logo</td>
+        <tr>
+            <td>1</td>
         </tr>
     </table>
     <div class="container">
         <table width="100%" cellspacing="0" cellpadding="5" id="content">
             <tr> 
-             <td width="33.3%" valign="top">
-                 <img style="float: left;" src="https://images.unsplash.com/photo-1634567011557-9175c0680d25?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=464&q=80" alt="">
+             <td width="33.3%" valign="top" style="background-color: yellow;">
+                 5
              </td>
-             <td width="33.3%" valign="top">
-                <img style="padding-left: 18px;" src="https://images.unsplash.com/photo-1634567011557-9175c0680d25?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=464&q=80" alt="">
+             <td width="33.3%" valign="top" style="background-color: white;">
+               4
             </td>
-            <td width="33.3%" valign="top">
-                <img style="float: right;" src="https://images.unsplash.com/photo-1634567011557-9175c0680d25?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=464&q=80" alt="">
+            <td width="33.3%" valign="top" style="background-color: yellow;">
+                2
             </td>
             </tr>
         </table>
     </div>
     <table width="100%" cellspacing="0" cellpadding="5" id="footer">
         <tr> 
-         <td style="text-align: center;" width="33.3%" valign="bottom">Tel: 04004000</td>
-         <td style="text-align: center;" width="33.3%" valign="bottom">Ukraine</td>
-         <td style="text-align: center;" width="33.3%" valign="bottom">By Zhdanov Daniil</td>
-          
-
+         <td style="text-align: center;" width="100%" valign="bottom">5</td>
         </tr>
     </table>
+   </div>
     
 </body>
 </html>
