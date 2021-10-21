@@ -1,0 +1,16 @@
+td {
+    border: 1px black solid;
+    text-align: center;
+}
+
+.one, .three {
+    background-color: rgb(48, 48, 247);
+}
+
+.two, .five{
+    background-color: rgb(235, 197, 29);
+}
+
+.four {
+    background-color: #fff;
+}
