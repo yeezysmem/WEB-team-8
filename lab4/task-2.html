@@ -1,24 +1,75 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/index.css">
-    <title> Task 2 </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <title>Lab 4</title>
+  <style type="text/css">
+    body{
+      background-color: #FFEBCD;
+      font-family: 'Oswald', sans-serif;
+    }
+
+    #task{
+      border: 4px double red;
+      padding: 10px;
+    }
+
+    #first-task{
+      display: flex;
+      justify-content: space-around;
+      width: 75%;
+      margin: auto;
+      margin-top: 50px;
+    }
+
+    .elem{
+      border: 2px solid blue;
+      padding: 5px;
+    }
+  </style>
 </head>
 <body>
-    <h2> заголовок: </h2>
-    <p>
-        2. У власному сайті або на окремій WEB-сторінці, використовучі функції , застосувати 4 способи функціонального застосування JavaScript:
-        • гіпертекстове посилання (схема URL); • обробник події (handler);
-        • підстановка (entity);
-        • вставка (тег SCRIPT).
-    </p> <br />
-    
-    <h2> заголовок: </h2>
-    <p>
-        ##############
-    </p> <br />
-    
-    
+
+  <h2 align="center">TASK</h2>
+  <div id="task">
+  <p> У власному сайті або на окремій WEB-сторінці, використовучі функції , застосувати 4 способи функціонального застосування JavaScript:
+    <ul>
+        <li>гіпертекстове посилання (схема URL);</li>
+        <li>обробник події (handler);</li>
+        <li>підстановка (entity);</li>
+        <li>вставка (тег SCRIPT);</li>
+      </ul>
+    </p>
+  </div>
+
+  <div id="first-task">
+    <div class="elem"><a id="URL-scheme" href="javascript:document.location.href =
+      'https://kpi.ua'" target='blank' />URL scheme example</div>
+    <div class="elem"><a id="handler" href="#" onmouseover="eventHandler()"/>Event handler example</div>
+    <div class="elem"><a id="entity" href="#" onclick="entityTask()">Click here</a></div>
+  </div>
+  <div><h3 id="demo"></h3></div>
+  <script>
+    function eventHandler(){
+      alert("Don't look at me, please ...(...");
+    }
+
+    function nameChecker() {
+      var person = prompt('Hi! Enter your name below, please.', 'My name is...');
+      return person;
+    }
+
+    function entityTask() {
+      var name = nameChecker();
+      if (name != null) {
+      document.getElementById("demo").innerHTML =
+      `Hello ${name}! How are you today?`;
+    }
+    }
+  </script>
 </body>
 </html>
