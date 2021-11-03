@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< Updated upstream
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -74,53 +73,3 @@
   </script>
 </body>
 </html>
-=======
-<html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="css/index.css" />
-    <title>Task 2</title>
-  </head>
-  <body>
-    <h2>заголовок:</h2>
-    <p>
-      2. У власному сайті або на окремій WEB-сторінці, використовучі функції ,
-      застосувати 4 способи функціонального застосування JavaScript: •
-      гіпертекстове посилання (схема URL); • обробник події (handler); •
-      підстановка (entity); • вставка (тег SCRIPT).
-    </p>
-    <br />
-
-    <h2>заголовок:</h2>
-    <p>##############</p>
-    <br />
-    <script>
-      var arrayOf = [1, 20, 13, 2, 4, 5, 8, 12, 28, 30];
-      var newArr = [];
-
-      arrayOf.forEach(function (item) {
-        newArr.push((item / 2) & (item / 3));
-      });
-      console.log("input array is:", arrayOf);
-      console.log("new array is:", newArr);
-
-      function quickSort(arr) {
-        if (arr.length < 2) return arr;
-        let pivot = arr[0];
-        const left = [];
-        const right = [];
-
-        for (let i = 1; i < arr.length; i++) {
-          if (pivot > arr[i]) {
-            left.push(arr[i]);
-          } else {
-            right.push(arr[i]);
-          }
-        }
-        return quickSort(left).concat(pivot, quickSort(right));
-      }
-      console.log("Sorted newArr is:", quickSort(newArr));
-    </script>
-  </body>
-</html>
->>>>>>> Stashed changes
