@@ -1,23 +1,37 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/index.css">
-    <title> Array Var 2 </title>
+    <title>Array Task</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  	<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="style/arraystyle.css">
 </head>
 <body>
-    <input type="text" placeholder="Enter text" onblur="getVal()">
+    <div id="input-container" align="center">
+        Enter the length of array: <input type="number" id="arr-length">
+        <button class="process" role="button">Process</button>
+    </div>
+    <div id="output-container">
+    	<p><b>Initial array:</b></p>
+    		<div id="init"></div>
+    	<p><b>Even indices elements sum:</b></p>
+    		<div id="evenprod"></div>
+    	<p><b>Negative product:</b></p>
+    		<div id="negprod"></div>
+    	<p><b>Maximum element among positive numbers:</b></p>
+    		<div id="maxpos"></div>
+    	<p><b>Maximum element among positive numbers index:</b></p>
+    		<div id="maxposindex"></div>
+    	<p><b>Minimum element among odd-indexed elements:</b></p>
+    		<div id="minodd"></div>
+    	<p><b>Minimum element among odd-indexed elements index:</b></p>
+    		<div id="minoddindex"></div>
+    	<p><b>Array sorted in ascending order:</b></p>
+    		<div id="arrsort"></div>
+    </div>
+    <script src="scripts/arrayscript.js"></script>
 </body>
-<script>
-  	const arrLength = document.querySelector('input').value;
-
-  	arr = new Array(arrLength);
-
-  	for (var i = 0; i < arrayLength; i++) {
-    	arr[i] = Math.random();
-}
-  	for (var i = 0; i < arrayLength; i++) {
-    	listing.innerHTML += "<li>" + myStringArray[i] + "</li>";
-}
-</script>
 </html>
+

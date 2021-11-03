@@ -29,6 +29,9 @@
         color: black;
       }
       .sub-menu {height: 0; overflow: hidden; opacity: 0; transition: all 0.5s ease-in;}
+      #content{
+        margin-right: 500px;
+      }
 
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -54,10 +57,10 @@
 <body>
 <div class="collapse navbar-collapse">
         <div class="nav-block">
-          <a class="menu-text" href="menuTask.html">Main</a>
-          <a class="menu-text" href="addPages/news.html">News</a>
-          <a class="menu-text" href="addPages/subscribe.html">Subscribe</a>
-          <a class="menu-text" href="addPages/reviews.html">Reviews</a>
+          <a class="menu-text" href="../menuTask.html">Main</a>
+          <a class="menu-text" href="news.html">News</a>
+          <a class="menu-text" href="subscribe.html">Subscribe</a>
+          <a class="menu-text" href="reviews.html">Reviews</a>
         </div>
       </div>
       
@@ -67,13 +70,13 @@
       <a href="#">Categories</a>
       <ul class="sub-menu">
          <li>
-            <a href="addPages/laptops.html">Laptops</a>
+            <a href="laptops.html">Laptops</a>
          </li>
          <li>
-            <a href="addPages/phones.html">Phones</a>
+            <a href="phones.html">Phones</a>
          </li>
       <li>
-            <a href="addPages/monitors.html">Monitors</a>
+            <a href="monitors.html">Monitors</a>
          </li>>
       </ul>
    </li>
@@ -81,44 +84,45 @@
       <a href="#">FAQ</a>
       <ul class="sub-menu">
          <li>
-            <a href="addPages/payment.html">Payment</a>
+            <a href="payment.html">Payment</a>
          </li>
          <li>
-            <a href="addPages/delivery.html">Delivery</a>
+            <a href="delivery.html">Delivery</a>
          </li>
          <li>
-            <a href="addPages/uarantee.html">Guarantee</a>
+            <a href="guarantee.html">Guarantee</a>
          </li>
       </ul>
    </li>
 </ul>
 </div>
+<div id="content" align="right">There will be photos of laptops</div>
 <script>
-  	var el = document.getElementsByClassName('menu-item');
-  	for(var i=0; i<el.length; i++) {
-   		el[i].addEventListener("mouseenter", showSub, false);
-   		el[i].addEventListener("mouseleave", hideSub, false);
-	}
+    var el = document.getElementsByClassName('menu-item');
+    for(var i=0; i<el.length; i++) {
+      el[i].addEventListener("mouseenter", showSub, false);
+      el[i].addEventListener("mouseleave", hideSub, false);
+  }
 
-	function showSub(e) {
-	   if(this.children.length>1) {
-	      this.children[1].style.height = "auto";
-	      this.children[1].style.overflow = "visible";
-	      this.children[1].style.opacity = "1";
-	   } else {
-	      return false;
-	   }
-	}
+  function showSub(e) {
+     if(this.children.length>1) {
+        this.children[1].style.height = "auto";
+        this.children[1].style.overflow = "visible";
+        this.children[1].style.opacity = "1";
+     } else {
+        return false;
+     }
+  }
 
-	function hideSub(e) {
-	    if(this.children.length>1) {
-	      this.children[1].style.height = "0px";
-	       this.children[1].style.overflow = "hidden";
-	       this.children[1].style.opacity = "0";
-	    } else {
-	       return false;
-	    }
-	}
+  function hideSub(e) {
+      if(this.children.length>1) {
+        this.children[1].style.height = "0px";
+         this.children[1].style.overflow = "hidden";
+         this.children[1].style.opacity = "0";
+      } else {
+         return false;
+      }
+  }
   </script>
 
 </body>
