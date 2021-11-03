@@ -1,0 +1,96 @@
+body{
+      background-color: #FFEBCD;
+      font-family: 'Oswald', sans-serif;
+    }
+
+.process {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Oswald", sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.process:hover {
+  background-color: #f7fafa;
+}
+
+.process:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+
+input[type=number]{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#input-container{
+	border: 2px solid red;
+	padding: 10px;
+}
+
+#output-container{
+	border: 2px solid blue;
+	padding: 10px;
+	margin-top: 10px; 
+}
+
+#init{
+	border: 1px solid yellow;
+	padding: 5px;
+}
+
+#evenpro{
+	border: 1px solid yellow;
+	padding: 5px;
+}
+
+#negprod{
+	border: 1px solid yellow;
+	padding: 5px;
+}
+
+#maxpos{
+	border: 1px solid yellow;
+	padding: 5px;
+}
+
+#maxposindex{
+	border: 1px solid yellow;
+	padding: 5px;
+}
+
+#minodd{
+	border: 1px solid yellow;
+	padding: 5px;
+}
+
+#minoddindex{
+	border: 1px solid yellow;
+	padding: 5px;
+}
+
+#arrsort{
+	border: 1px solid yellow;
+	padding: 5px;
+}
