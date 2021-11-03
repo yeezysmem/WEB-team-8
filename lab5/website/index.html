@@ -5,29 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>8store.ua</title>
-    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Styles -->
     <link rel="stylesheet" href="styles/styles.css" />
-    <!-- NORMALIZE CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css  "
     />
+    <link rel="stylesheet" type="text/css" href="../task/jQuery/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/resources/demos/style.css">
+    <script src="../task/jQuery/external/jquery/jquery.js"></script>
+    <script src="../task/jQuery/jquery-ui.js"></script>
+    <script src="../task/script/main.js"></script>
     <style>
-      /* Style for all the images that are inside td */
       td img {
         max-width: 100%;
         max-height: 230px;
         margin-top: 10px;
       }
 
-      /* Style for the submit button */
       #submit_btn {
         background-color: #04aa6d;
         color: white;
@@ -39,10 +39,9 @@
       }
 
       #submit_btn:hover {
-        opacity: 0.8; /* Change the opacity when the mouse hovers over the button */
+        opacity: 0.8;
       }
 
-      /* Style for the button to go to all reports */
       #go_to_all_labs_btn {
         font-size: 16px;
 
@@ -66,9 +65,14 @@
         background-color: #bef0ff;
       }
 
-      /* Style for the list */
       li {
         list-style-type: none;
+      }
+
+      #price-slider{
+          width: 500px;
+          margin-left: 50px;
+          margin-bottom: 30px; 
       }
     </style>
   </head>
@@ -81,34 +85,6 @@
     />
     </div>
 
-    <!-- <a href="description.html" align="center">
-      <h3>See our WEB application description</h3>
-    </a>  -->
-
-    <!-- <div align="center">
-      <form action="/my-handling-form-page" method="post">
-        <ul>
-          <li>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="user_name" />
-          </li>
-          <li>
-            <label for="mail">E-mail:</label>
-            <input type="email" id="mail" name="user_mail" />
-          </li>
-          <li>
-            <label for="search">Search:</label>
-            <input type="text" id="search" name="search_request" />
-            <input
-              type="submit"
-              id="submit_btn"
-              name="find"
-              style="display: block"
-            />
-          </li>
-        </ul>
-      </form>
-    </div>  -->
      <section class="categories">
       
       <div class="container">
@@ -119,7 +95,7 @@
             <div class="categories-item__content">
               <div class="categories-item__content-name">Monitors</div>
               <div class="categories-item__content-arrow">
-                <img src="images/arrow-right.svg" alt="">
+                <a href="monitors.html"><img src="images/arrow-right.svg" alt=""></a>
               </div>
             </div>
             <div class="categories-item__monitor">
@@ -180,15 +156,70 @@
 
     </section> 
 
-  
-     
+    <div id="price-slider">
+      <h2>Have any questions?</h2>
+      <h2>Fill the form and we will call you back!</h2>
+      <form>
+        <fieldset>
+          <div>
+            <label for="firstname">Name</label>
+            <input id="firstname" name="firstname" title="Please provide your name.">
+          </div>
+          <div>
+            <label for="lastname">Surname</label>
+            <input id="lastname" name="lastname" title="Please provide also your surname.">
+          </div>
+          <div>
+            <label for="address">Phone number</label>
+            <input id="address" name="address" title="Your phone number to call you.">
+          </div>
+        </fieldset>
+      </form>
+    </div>
 
-    <!-- <br><br><br>
-<a href="../Report for labs/html/index.html"> 
-  <input type="submit" id="go_to_all_labs_btn" name="action"
-  value="Go to reports.">
-</a>
-
-<br><br><br><br> -->
+    <div id="faq">
+            <div id="accordion">
+        <h3>About us</h3>
+        <div>
+          <p>
+          8store.ua - is a new player in the electronics market.</p>
+          <p>Our online store is designed to sell electronics for every taste and color. The range includes everything for a gamer, student or ordinary office worker. A large selection of components for computers, a wide range of laptops. And most importantly - all this at a low price. We are here for you! 
+          </p>
+        </div>
+        <h3>Payment</h3>
+        <div>
+          <p>
+          For your convenience, we offer various payment methods:
+          <ul>
+          <li>- in cash upon receipt of the goods;</li>
+          <li>- full prepayment with any Visa or Mastercard;</li>
+          <li>- prepayment of 50% with subsequent payment upon receipt;</li>
+          </ul>
+          It is also possible to arrange an installment plan or a loan. For more information, fill out the form above and our employee will contact you shortly.
+          </p>
+        </div>
+        <h3>Delivery</h3>
+        <div>
+          <p>
+          For the delivery of goods, you can choose the following options:
+          </p>
+          <ul>
+            <li>- delivery by Nova Poshta (delivery cost depends on the type of product and delivery address);</li>
+            <li>- delivery by Ukrposhta;</li>
+            <li>- delivery by JustIn;</li>
+            <li>- pickup from Kiev;</li>
+          </ul>
+        </div>
+        <h3>Reviews</h3>
+        <div>
+          <p>
+          We are a young company that has just entered the market, so we do not have a lot of reviews. 
+          </p>
+          <p>
+          Nevertheless, all of our small number of buyers are satisfied with the quality of service and the product itself.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
