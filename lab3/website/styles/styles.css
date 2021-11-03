@@ -243,3 +243,52 @@ a {
   height: 20px;
 }
 /*# sourceMappingURL=styles.css.map */
+
+
+/* Slider */
+.gallery {
+  margin-top: 100px;
+}
+
+
+
+.slider-item img{
+  border-radius: 20px;
+  width: 23em;
+  padding: 0;
+  height: auto;
+}
+
+
+.slick-prev  {
+  transform: rotate(180deg);
+  background-image: url(/lab3/website/images/arrow-right.svg);
+  border: none;
+  background-size: contain;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  font-size: 25px;
+  color: transparent;
+  width: 30px;
+}
+.slick-next  {
+  background-size: contain  ;
+  background-image: url(/lab3/website/images/arrow-right.svg);
+  border: none;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  font-size: 28px;
+  color: transparent;
+  width: 30px;
+  position: absolute;
+  top: 0px;
+  left: 30px;
+}
+
+.slider .slick-initialized .slick-slider {
+  display: flex;
+}
+
+.video-slider {
+  margin-bottom: 100px;
+}
