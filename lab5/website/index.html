@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="uk">
   <head>
@@ -8,6 +16,10 @@
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -76,87 +88,97 @@
   <body>
     <div class="container">
       <img
-      src="images/mainbg.png"
-      style="display: block; margin: auto; width: 100%; border-radius: 40px; margin-top: 40px; border: 1px solid #2c2f37;"
-    />
+        src="images/mainbg.png"
+        style="
+          display: block;
+          margin: auto;
+          width: 100%;
+          border-radius: 40px;
+          margin-top: 40px;
+          border: 1px solid #2c2f37;
+        "
+      />
+
+      <div class="gallery">
+        <a
+          href="/lab5/website/images/slide1.jpg"
+          data-fancybox="gallery"
+          class="slider-item"
+        >
+          <img src="/lab5/website/images/slide1.jpg" alt="" />
+        </a>
+        <a
+          href="/lab5/website/images/slide3.jpg"
+          data-fancybox="gallery"
+          class="slider-item"
+        >
+          <img src="/lab5/website/images/slide3.jpg" alt="" />
+        </a>
+        <a
+          href="/lab5/website/images/slide1.jpg"
+          data-fancybox="gallery"
+          class="slider-item"
+        >
+          <img src="/lab5/website/images/slide1.jpg" alt="" />
+        </a>
+        <a
+          href="/lab5/website/images/slide1.jpg"
+          data-fancybox="gallery"
+          class="slider-item"
+        >
+          <img src="/lab5/website/images/slide1.jpg" alt="" />
+        </a>
+      </div>
     </div>
-
-    <!-- <a href="description.html" align="center">
-      <h3>See our WEB application description</h3>
-    </a>  -->
-
-    <!-- <div align="center">
-      <form action="/my-handling-form-page" method="post">
-        <ul>
-          <li>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="user_name" />
-          </li>
-          <li>
-            <label for="mail">E-mail:</label>
-            <input type="email" id="mail" name="user_mail" />
-          </li>
-          <li>
-            <label for="search">Search:</label>
-            <input type="text" id="search" name="search_request" />
-            <input
-              type="submit"
-              id="submit_btn"
-              name="find"
-              style="display: block"
-            />
-          </li>
-        </ul>
-      </form>
-    </div>  -->
-     <section class="categories">
-      
+    <section class="categories">
       <div class="container">
         <h2>Categories</h2>
-        <div class="row" style="display: flex; justify-content: space-between; margin: 100px 0;">
-          
+        <div
+          class="row"
+          style="display: flex; justify-content: space-between; margin: 100px 0"
+        >
           <div class="categories-item">
             <div class="categories-item__content">
               <div class="categories-item__content-name">Monitors</div>
               <div class="categories-item__content-arrow">
-                <img src="images/arrow-right.svg" alt="">
+                <img src="images/arrow-right.svg" alt="" />
               </div>
             </div>
             <div class="categories-item__monitor">
-              <img src="images/monitor.png" alt="">
+              <img src="images/monitor.png" alt="" />
             </div>
           </div>
           <div class="categories-item">
             <div class="categories-item__content">
               <div class="categories-item__content-name">Motherboards</div>
               <div class="categories-item__content-arrow">
-                <img src="images/arrow-right.svg" alt="">
+                <img src="images/arrow-right.svg" alt="" />
               </div>
             </div>
             <div class="categories-item__motherboard">
-              <img src="images/Motherboard.png" alt="">
+              <img src="images/Motherboard.png" alt="" />
             </div>
           </div>
           <div class="categories-item">
             <div class="categories-item__content">
               <div class="categories-item__content-name">Components</div>
               <div class="categories-item__content-arrow">
-                <img src="images/arrow-right.svg" alt="">
+                <img src="images/arrow-right.svg" alt="" />
               </div>
             </div>
             <div class="categories-item__components">
-              <img src="images/Components.png" alt="">
+              <img src="images/Components.png" alt="" />
             </div>
           </div>
           <div class="categories-item">
             <div class="categories-item__content">
               <div class="categories-item__content-name">Laptops</div>
               <div class="categories-item__content-arrow">
-                <img src="images/arrow-right.svg" alt="">
+                <img src="images/arrow-right.svg" alt="" />
               </div>
             </div>
             <div class="categories-item__laptop">
-              <img src="images/laptop.png" alt="">
+              <img src="images/laptop.png" alt="" />
             </div>
           </div>
           <a href="/lab1/pages/pc.html">
@@ -164,24 +186,56 @@
               <div class="categories-item__content">
                 <div class="categories-item__content-name">Desktop-PC</div>
                 <div class="categories-item__content-arrow">
-                  <img src="images/arrow-right.svg" alt="">
+                  <img src="images/arrow-right.svg" alt="" />
                 </div>
               </div>
               <div class="categories-item__pc">
-                <img src="images/Desktop-PC.png" alt="">
+                <img src="images/Desktop-PC.png" alt="" />
               </div>
             </div>
           </a>
         </div>
-        
       </div>
     </section>
     <section class="items">
-
-    </section> 
-
-  
-     
+      <div class="container">
+        <div class="video-slider">
+          <div class="slider-item">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/Prct32qLYxU"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="slider-item">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/CYEtdVAY1Ww"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="slider-item">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/altHO6DPYUg"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- <br><br><br>
 <a href="../Report for labs/html/index.html"> 
@@ -190,5 +244,13 @@
 </a>
 
 <br><br><br><br> -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+      rel="stylesheet"
+    />
+    <script src="index.js"></script>
   </body>
 </html>
