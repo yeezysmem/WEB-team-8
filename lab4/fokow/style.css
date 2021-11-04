@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(207, 220, 245);
+    font-size: 19px;
+}
+
+label {
+    font-size: 20px;
+}
+
+input[type=text] {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
+input[type=submit] {
+    margin: 30px 30px 30px 200px;
+    padding: 20px 10px;
+    font-size: 15px;
+}
+
+#smallest {
+    width: 300px;
+    margin-left: 130px;
+    font-size: 25px;
+    text-align: center;
+}
+
+h4 {
+    display: none;
+}
+
+footer {
+    height: 150px;
+}
+
+
+#set-alarm-container label {
+	display: inline-block;
+}
+
+#buttons-container button {
+	display: inline-block;
+    height: 30px;
+    margin-top: 10px;
+}

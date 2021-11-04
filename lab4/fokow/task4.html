@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title> Task 4 </title>
+</head>
+<body>
+    <h2> Завдання 4. </h2>
+    
+    <h3> Фоков Володимир - варіант 8 </h3>
+    
+    <ul class="my-list">
+        <li>Створити два одновимірних массивів, кількість елементів яких задана користувачем.</li>
+        
+        <li>
+            Знайти найменший серед тих елементів першого вектора, <br>
+            які співпадають із значеннями елементів другого вектора. 
+        </li>
+        
+        <li>Упорядкувати масив у порядку зростання методом <b><em>бульбашки</em></b>.</li>
+        
+        <li>Надрукувати вхідний та вихідний масив.</li>
+        
+        <li>Застосувати функції.</li>
+    </ul>
+    
+    
+    
+    <form onsubmit="main(event)">
+        <label for="input1">Введіть кількість елементів першого масиву: </label>
+        <input autofocus type="text" id="input1"> <br>
+        <label for="input2">Введіть кількість елементів другого масиву: </label>
+        <input type="text" id="input2"> <br>
+        <input type="submit" value="Створити масиви!">
+    </form>
+    
+    
+    <h4>Створені масиви: </h4>
+    <div id="created"></div>
+    
+    <h4>
+        Найменший серед тих елементів першого вектора, 
+        які співпадають із значеннями елементів другого вектора: 
+    </h4>
+    <div id="smallest"></div>
+    
+    <h4> Вхідний та вихідний масив: </h4>
+    <div id="sorted"></div>
+    
+    <footer></footer>
+    
+    <script src="task4.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title> Task 6 </title>
+</head>
+<body>
+    <h2> Завдання 6. </h2>
+    
+    <h3> Фоков Володимир - варіант 8 </h3>
+    
+    <p> Програма-Будильник. Основні функції: </p> 
+    <ul>
+        <li>Увімкнення-вимкнення</li>
+        <li>Уведення дати та часу</li>
+        <li>Можливість включення довільної кількості будильників</li>
+        <li>Перегляд заведених будильників</li>
+        <li>При досягненні часу спрацьовування, заданого для будильника, 
+            видавати повідомлення
+        </li>
+    </ul>
+    
+    
+    <div id='main-container'>
+        <h2>Current Time:</h2>
+        <h2 id='clock'></h2>
+    </div>
+    
+    <div id='set-alarm-container'>
+        <h3>Set a new Alarm</h3>
+        <label>
+            <div> <select id='hoursMenu'></select> </div>
+        </label>
+        <label>
+            <div> <select id='minsMenu'></select> </div>
+        </label>
+        <label>
+            <div> <select id='secsMenu'></select> </div>
+        </label>
+    </div>
+    
+    
+    <div id='buttons-container'>
+        <button  id='setButton' onClick='alarmSet()'>Set Alarm</button>
+        <button  id='clearButton' onClick='alarmClear()'>Clear Alarm</button>
+    </div>
+    
+    
+    <div id='alarm-list-container'>
+        <ul id="list">
+            
+        </ul>
+    </div>
+    
+    
+    
+    
+    
+    
+    <footer></footer>
+    
+    <script src="task6.js"></script>
+    
+    
+    
+    <!-- 
+        <input placeholder="Enter some text" name="name"/>
+        <p id="output"></p>
+    -->
+    
+</body>
+</html>
