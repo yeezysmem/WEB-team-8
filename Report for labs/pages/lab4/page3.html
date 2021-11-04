@@ -1,33 +1,83 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../css/pages.css">
-    <title> Масиви </title>
-</head>
-<body>
-    <h2> Масиви (пункт 4) </h2>
-    <h2> Андрущенко Ярослав Миколайович Варіант 2</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../css/pages.css" />
+    <title>Масиви</title>
+  </head>
+  <body>
+    <h2>Масиви (пункт 4)</h2>
+    <h2>Андрущенко Ярослав Миколайович Варіант 2</h2>
     <h2>Завдання</h2>
-        <p>
-            Створити одновимірний массив, кількість елементів якого задана користувачем. Знайти суму елементів з парними індексами, добуток від’ємних елементів, максимальний елемент та його індекс серед додатних чисел, мінімальний елемент та його індекс серед елементів зх непарними індексами.
-            Упорядкувати масив у порядку зростання, Надрукувати вхідний та вихідний масив. Застосувати функції
-        </p> <br />
+    <p>
+      Створити одновимірний массив, кількість елементів якого задана
+      користувачем. Знайти суму елементів з парними індексами, добуток від’ємних
+      елементів, максимальний елемент та його індекс серед додатних чисел,
+      мінімальний елемент та його індекс серед елементів зх непарними індексами.
+      Упорядкувати масив у порядку зростання, Надрукувати вхідний та вихідний
+      масив. Застосувати функції
+    </p>
+    <br />
     <h2>Зовнішній вигляд сторінки з виконаним завданням</h2>
-    <img src="../../img, etc/lab4 screenshots/array_resultpage.png">
+    <img src="../../img, etc/lab4 screenshots/array_resultpage.png" />
     <h2>HTML-код</h2>
-    <img src="../../img, etc/lab4 screenshots/array_html.png">
+    <img src="../../img, etc/lab4 screenshots/array_html.png" />
     <h2>CSS-код</h2>
-    <img src="../../img, etc/lab4 screenshots/array_css.png">
+    <img src="../../img, etc/lab4 screenshots/array_css.png" />
     <h2>JS-код</h2>
-    <img src="../../img, etc/lab4 screenshots/array_js1.png">
-    <img src="../../img, etc/lab4 screenshots/array_js2.png">
+    <img src="../../img, etc/lab4 screenshots/array_js1.png" />
+    <img src="../../img, etc/lab4 screenshots/array_js2.png" />
 
-    <h2> заголовок: </h2>
-        <p>
-            ##############
-        </p> <br />
-
-    
-</body>
+    <h2>Пункт 4</h2>
+    <h2>Жданов Даніїл Олексійович Варіант 9</h2>
+    <h2>Завдання</h2>
+    <p>
+      Заданий масив цілих чисел. Побудувати новий масив, в якому спочатку стоять
+      числа, що діляться на 2, потім ті, що діляться на 2 та 3, потім на 3.
+      Надрукувати вхідний та вихідний масиви. Упорядкувати масив у порядку
+      зростання.(метод Швидкого сортування)Надрукувати вхідний та вихідний
+      масив.
+    </p>
+    <br />
+    <h2>Зовнішній вигляд сторінки з виконаним завдання</h2>
+    <h2>Html-код</h2>
+    <xmp>
+        <html lang="uk">
+            <head>
+              <meta charset="UTF-8" />
+              <link rel="stylesheet" href="css/index.css" />
+              <title>Task 2</title>
+            </head>
+            <body>
+              <script>
+                var arrayOf = [1, 20, 13, 2, 4, 5, 8, 12, 28, 30];
+                var newArr = [];
+          
+                arrayOf.forEach(function (item) {
+                  newArr.push((item / 2) & (item / 3));
+                });
+                console.log("input array is:", arrayOf);
+                console.log("new array is:", newArr);
+          
+                function quickSort(arr) {
+                  if (arr.length < 2) return arr;
+                  let pivot = arr[0];
+                  const left = [];
+                  const right = [];
+          
+                  for (let i = 1; i < arr.length; i++) {
+                    if (pivot > arr[i]) {
+                      left.push(arr[i]);
+                    } else {
+                      right.push(arr[i]);
+                    }
+                  }
+                  return quickSort(left).concat(pivot, quickSort(right));
+                }
+                console.log("Sorted newArr is:", quickSort(newArr));
+              </script>
+            </body>
+    </xmp>
+    <img src="../../img, etc/lab4 screenshots/sortOut.png" />
+  </body>
 </html>

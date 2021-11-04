@@ -3,29 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/pages.css">
-    <title> Гулерея UniteGallery </title>
+    <title> Галерея Slick-slider </title>
 </head>
 <body>
-    <h1> Галерея UniteGallery </h1>
+    <h1> Галерея Slick-slider </h1>
     
     <h2> Фотогалерея: </h2>
     <p>
-        ##############
+        
     </p> <br />
+    <h2>HTML-code</h2>
+    <xmp>
+        <div class="gallery">
+            <a
+              href="/lab5/website/images/slide1.jpg"
+              data-fancybox="gallery"
+              class="slider-item"
+            >
+              <img src="/lab5/website/images/slide1.jpg" alt="" />
+            </a>
+            <a
+              href="/lab5/website/images/slide3.jpg"
+              data-fancybox="gallery"
+              class="slider-item"
+            >
+              <img src="/lab5/website/images/slide3.jpg" alt="" />
+            </a>
+            <a
+              href="/lab5/website/images/slide1.jpg"
+              data-fancybox="gallery"
+              class="slider-item"
+            >
+              <img src="/lab5/website/images/slide1.jpg" alt="" />
+            </a>
+            <a
+              href="/lab5/website/images/slide1.jpg"
+              data-fancybox="gallery"
+              class="slider-item"
+            >
+              <img src="/lab5/website/images/slide1.jpg" alt="" />
+            </a>
+          </div>
+    </xmp>
+    <h2>CSS-code</h2>
+    <xmp>
+        /* Slider */
+.gallery {
+  margin-top: 100px;
+}
+
+
+
+.slider-item img{
+  border-radius: 20px;
+  width: 23em;
+  padding: 0;
+  height: auto;
+}
+
+
+.slick-prev  {
+  transform: rotate(180deg);
+  background-image: url(/lab3/website/images/arrow-right.svg);
+  border: none;
+  background-size: contain;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  font-size: 25px;
+  color: transparent;
+  width: 30px;
+}
+.slick-next  {
+  background-size: contain  ;
+  background-image: url(/lab3/website/images/arrow-right.svg);
+  border: none;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  font-size: 28px;
+  color: transparent;
+  width: 30px;
+  position: absolute;
+  top: 0px;
+  left: 30px;
+}
+
+.slider .slick-initialized .slick-slider {
+  display: flex;
+}
+
+.video-slider {
+  margin-bottom: 100px;
+}
+    </xmp>
+    <h2>jQuery-code</h2>
+    <xmp>
+        $('.gallery').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1
+          });
+
+          $(document).ready(function() {
+
+            /* This is basic - uses default settings */
+            
+            $("a#single_image").fancybox();
+            
+            /* Using custom settings */
+            
+            $("a#inline").fancybox({
+                'hideOnContentClick': true
+            });
+        
+            /* Apply fancybox to multiple items */
+            
+            $("a.group").fancybox({
+                'transitionIn'	:	'elastic',
+                'transitionOut'	:	'elastic',
+                'speedIn'		:	600, 
+                'speedOut'		:	200, 
+                'overlayShow'	:	false
+            });
+            
+        });
+    </xmp>
+    </br>
+    <img src="../../img, etc/lab5 screenshots/slider.png">
     
-    
-    
-    <h2> Слайдер фотографій: </h2>
-    <p>
-        ##############
-    </p> <br />
-    
-    
-    
-    <h2> Слайдер відеоматеріалів: </h2>
-    <p>
-        ##############
-    </p> <br />
+    <h2>HTML-code</h2>
+    <xmp>
+        <div class="video-slider">
+            <div class="slider-item">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/Prct32qLYxU"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="slider-item">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/CYEtdVAY1Ww"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="slider-item">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/altHO6DPYUg"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+    </xmp>
+    <h2>CSS-code</h2>
+    <xmp> 
+        /* Slider */
+.gallery {
+  margin-top: 100px;
+}
+
+
+
+.slider-item img{
+  border-radius: 20px;
+  width: 23em;
+  padding: 0;
+  height: auto;
+}
+
+
+.slick-prev  {
+  transform: rotate(180deg);
+  background-image: url(/lab3/website/images/arrow-right.svg);
+  border: none;
+  background-size: contain;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  font-size: 25px;
+  color: transparent;
+  width: 30px;
+}
+.slick-next  {
+  background-size: contain  ;
+  background-image: url(/lab3/website/images/arrow-right.svg);
+  border: none;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  font-size: 28px;
+  color: transparent;
+  width: 30px;
+  position: absolute;
+  top: 0px;
+  left: 30px;
+}
+
+.slider .slick-initialized .slick-slider {
+  display: flex;
+}
+
+.video-slider {
+  margin-bottom: 100px;
+}
+    </xmp>
+    <h2>jQuery-code</h2>
+    <xmp>
+        $('.video-slider').slick({
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 1
+          });
+    </xmp>
+    </br>
+    <img src="../../img, etc/lab5 screenshots/video.png">
     
 </body>
 </html>
