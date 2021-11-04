@@ -4,7 +4,7 @@ let arr = [-1, -3, 4, 8, 9, -10];
 //   });
 let min = [];
 let pls = [];
-console.log(arr);
+console.log("Массив:", arr);
 
 // Вывод минимального числа среди положительных
 
@@ -19,7 +19,7 @@ for (let i = 0; i < 7; i++)
 var arrpls = pls.filter(function (el) {
     return el != null;
   });
-console.log(arrpls);
+console.log("Массив з додатніх чисел:", arrpls);
 // [4, 8, 9]
 for (let i = 0; i < 7; i++)
 {
@@ -28,7 +28,7 @@ for (let i = 0; i < 7; i++)
         num1 = arrpls[i];
     }
 }
-console.log(num1)
+console.log("Найменше з додатніх:", num1)
 
 // Вывод максимального числа среди отрицательних
 
@@ -43,7 +43,7 @@ for (let i = 0; i < 7; i++)
 var arrmin = min.filter(function (el) {
     return el != null;
   });
-console.log(arrmin);
+console.log("Массив з від'ємних чисел:", arrmin);
 // [-10, -3, -1]
 for (let i = 0; i < 7; i++)
 {
@@ -52,7 +52,7 @@ for (let i = 0; i < 7; i++)
         num2 = arrmin[i];
     }
 }
-console.log(num2)
+console.log("Найбільше від'ємне:", num2)
 
 //  Сортировка выборкой
 
@@ -77,4 +77,4 @@ function selectionSort(arr) {
     return arr;
 }
 selectionSort(arr);
-console.log(arr)
+console.log("Сортування:", arr)
