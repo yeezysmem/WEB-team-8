@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="uk">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../css/pages.css" />
     <title>Виконання 6 пункту</title>
-  </head>
-  <body>
+</head>
+<body>
     <h2>Виконання 6 пункту:</h2>
     <h2>Андрущенко Ярослав Миколайович Варіант 2</h2>
     <h2>Завдання</h2>
     <p>
-      Сформувати багаторівневе меню (горизонтальне та вертикальне), пункти меню
-      взяти із статичного масиву. При натисканні на визначений пункт меню має
-      завантажуватися відповідна HTML-сторінка. Меню має бути присутнім на усіх
-      сторінках.
+        Сформувати багаторівневе меню (горизонтальне та вертикальне), пункти меню
+        взяти із статичного масиву. При натисканні на визначений пункт меню має
+        завантажуватися відповідна HTML-сторінка. Меню має бути присутнім на усіх
+        сторінках.
     </p>
     <br />
     <h2>Зовнішній вигляд сторінки з виконаним завданням</h2>
@@ -25,7 +25,8 @@
     <h2>JS-код</h2>
     <img src="../../img, etc/lab4 screenshots/menu_js1.png" />
     <img src="../../img, etc/lab4 screenshots/menu_js2.png" />
-
+    <hr>
+    
     <h2>6 пункт:</h2>
     <h2>Жданов Даніїл Олексійович Варіант 9</h2>
     <h2>Завдання</h2>
@@ -44,12 +45,12 @@
         <body>
             <div class="wrapper">
                 <div class="search-input">
-                <a href="" target="_blank" hidden></a>
-                <input type="text" placeholder="Type to search..">
-                <div class="autocom-box">
-                    <!-- here list are inserted from javascript -->
-                </div>
-                <div class="icon"><i class="fas fa-search"></i></div>
+                    <a href="" target="_blank" hidden></a>
+                    <input type="text" placeholder="Type to search..">
+                    <div class="autocom-box">
+                        <!-- here list are inserted from javascript -->
+                    </div>
+                    <div class="icon"><i class="fas fa-search"></i></div>
                 </div>
             </div>
             <script src="autocomplete.js"></script>
@@ -58,33 +59,33 @@
     </xmp>
     <h2>CSS-code</h2>
     <xmp
->
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-        *{
+    >
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+    *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
-        }
-        body{
+    }
+    body{
         padding: 0 20px;
-        }
-        ::selection{
+    }
+    ::selection{
         color: #fff;
         background: #000;
-        }
-        .wrapper{
+    }
+    .wrapper{
         max-width: 450px;
         margin: 150px auto;
-        }
-        .wrapper .search-input{
+    }
+    .wrapper .search-input{
         background: #fff;
         width: 100%;
         border-radius: 5px;
         position: relative;
         box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
-        }
-        .search-input input{
+    }
+    .search-input input{
         height: 55px;
         width: 100%;
         outline: none;
@@ -93,37 +94,37 @@
         padding: 0 60px 0 20px;
         font-size: 18px;
         box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
-        }
-        .search-input.active input{
+    }
+    .search-input.active input{
         border-radius: 5px 5px 0 0;
-        }
-        .search-input .autocom-box{
+    }
+    .search-input .autocom-box{
         padding: 0;
         opacity: 0;
         pointer-events: none;
         max-height: 280px;
         overflow-y: auto;
-        }
-        .search-input.active .autocom-box{
+    }
+    .search-input.active .autocom-box{
         padding: 10px 8px;
         opacity: 1;
         pointer-events: auto;
-        }
-        .autocom-box li{
+    }
+    .autocom-box li{
         list-style: none;
         padding: 8px 12px;
         display: none;
         width: 100%;
         cursor: default;
         border-radius: 3px;
-        }
-        .search-input.active .autocom-box li{
+    }
+    .search-input.active .autocom-box li{
         display: block;
-        }
-        .autocom-box li:hover{
+    }
+    .autocom-box li:hover{
         background: #efefef;
-        }
-        .search-input .icon{
+    }
+    .search-input .icon{
         position: absolute;
         right: 0px;
         top: 0px;
@@ -134,13 +135,13 @@
         font-size: 20px;
         color: #644bff;
         cursor: pointer;
-        }
-
-        
-    </xmp>
-    <h2>JS-code</h2>
-    <xmp>
-        let suggestions = [
+    }
+    
+    
+</xmp>
+<h2>JS-code</h2>
+<xmp>
+    let suggestions = [
     "Channel",
     "CodingLab",
     "CodingNepal",
@@ -167,66 +168,110 @@
     "How to start YouTube Channel",
     "What does HTML stands for?",
     "What does CSS stands for?",
-];
-
-// getting all required elements
-const searchWrapper = document.querySelector(".search-input");
-const inputBox = searchWrapper.querySelector("input");
-const suggBox = searchWrapper.querySelector(".autocom-box");
-const icon = searchWrapper.querySelector(".icon");
-let linkTag = searchWrapper.querySelector("a");
-let webLink;
-// if user press any key and release
-inputBox.onkeyup = (e)=>{
-    let userData = e.target.value; //user enetered data
-    let emptyArray = [];
-    if(userData){
+    ];
+    
+    // getting all required elements
+    const searchWrapper = document.querySelector(".search-input");
+    const inputBox = searchWrapper.querySelector("input");
+    const suggBox = searchWrapper.querySelector(".autocom-box");
+    const icon = searchWrapper.querySelector(".icon");
+    let linkTag = searchWrapper.querySelector("a");
+    let webLink;
+    // if user press any key and release
+    inputBox.onkeyup = (e)=>{
+        let userData = e.target.value; //user enetered data
+        let emptyArray = [];
+        if(userData){
+            icon.onclick = ()=>{
+                webLink = `https://www.google.com/search?q=${userData}`;
+                linkTag.setAttribute("href", webLink);
+                linkTag.click();
+            }
+            emptyArray = suggestions.filter((data)=>{
+                //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
+                return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+            });
+            emptyArray = emptyArray.map((data)=>{
+                // passing return data inside li tag
+                return data = `<li>${data}</li>`;
+            });
+            searchWrapper.classList.add("active"); //show autocomplete box
+            showSuggestions(emptyArray);
+            let allList = suggBox.querySelectorAll("li");
+            for (let i = 0; i < allList.length; i++) {
+                //adding onclick attribute in all li tag
+                allList[i].setAttribute("onclick", "select(this)");
+            }
+        }else{
+            searchWrapper.classList.remove("active"); //hide autocomplete box
+        }
+    }
+    function select(element){
+        let selectData = element.textContent;
+        inputBox.value = selectData;
         icon.onclick = ()=>{
-            webLink = `https://www.google.com/search?q=${userData}`;
+            webLink = `https://www.google.com/search?q=${selectData}`;
             linkTag.setAttribute("href", webLink);
             linkTag.click();
         }
-        emptyArray = suggestions.filter((data)=>{
-            //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
-            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-        });
-        emptyArray = emptyArray.map((data)=>{
-            // passing return data inside li tag
-            return data = `<li>${data}</li>`;
-        });
-        searchWrapper.classList.add("active"); //show autocomplete box
-        showSuggestions(emptyArray);
-        let allList = suggBox.querySelectorAll("li");
-        for (let i = 0; i < allList.length; i++) {
-            //adding onclick attribute in all li tag
-            allList[i].setAttribute("onclick", "select(this)");
+        searchWrapper.classList.remove("active");
+    }
+    function showSuggestions(list){
+        let listData;
+        if(!list.length){
+            userValue = inputBox.value;
+            listData = `<li>${userValue}</li>`;
+        }else{
+            listData = list.join('');
         }
-    }else{
-        searchWrapper.classList.remove("active"); //hide autocomplete box
+        suggBox.innerHTML = listData;
     }
-}
-function select(element){
-    let selectData = element.textContent;
-    inputBox.value = selectData;
-    icon.onclick = ()=>{
-        webLink = `https://www.google.com/search?q=${selectData}`;
-        linkTag.setAttribute("href", webLink);
-        linkTag.click();
-    }
-    searchWrapper.classList.remove("active");
-}
-function showSuggestions(list){
-    let listData;
-    if(!list.length){
-        userValue = inputBox.value;
-        listData = `<li>${userValue}</li>`;
-    }else{
-      listData = list.join('');
-    }
-    suggBox.innerHTML = listData;
-}
+    
+</xmp>
+<img src="../../img, etc/lab4 screenshots/form.png" />
+<hr>
 
-    </xmp>
-    <img src="../../img, etc/lab4 screenshots/form.png" />
-  </body>
+
+
+
+
+<h2> Пункт 6 </h2>
+<h2>Фоков Володимир Петрович – Варіант 8</h2>
+<h2>Завдання</h2>
+<p> Програма-Будильник. Основні функції: </p> 
+<ul>
+    <li>Увімкнення-вимкнення</li>
+    <li>Уведення дати та часу</li>
+    <li>Можливість включення довільної кількості будильників</li>
+    <li>Перегляд заведених будильників</li>
+    <li>При досягненні часу спрацьовування, заданого для будильника, 
+        видавати повідомлення
+    </li>
+</ul>
+
+<h2>Зовнішній вигляд сторінки з виконаним завданням</h2>
+<img src="../../img, etc/lab4 screenshots/fokow/6/result-1.png" class="centered"/>
+<img src="../../img, etc/lab4 screenshots/fokow/6/result-2.png" class="centered"/>
+<img src="../../img, etc/lab4 screenshots/fokow/6/result-3.png" class="centered"/>
+<img src="../../img, etc/lab4 screenshots/fokow/6/result-4.png" class="centered"/>
+
+<h2>HTML-код</h2>
+<img src="../../img, etc/lab4 screenshots/fokow/6/html-1.png" class="centered"/>
+<img src="../../img, etc/lab4 screenshots/fokow/6/html-2.png" class="centered"/>
+
+<h2>CSS-код</h2>
+<img src="../../img, etc/lab4 screenshots/fokow/6/css-1.png" class="centered"/>
+<img src="../../img, etc/lab4 screenshots/fokow/6/css-2.png" class="centered"/>
+
+<h2>JS-код</h2>
+<img src="../../img, etc/lab4 screenshots/fokow/6/js-1.png" class="centered"/>
+<img src="../../img, etc/lab4 screenshots/fokow/6/js-2.png" class="centered"/>
+<img src="../../img, etc/lab4 screenshots/fokow/6/js-3.png" class="centered"/>
+<img src="../../img, etc/lab4 screenshots/fokow/6/js-4.png" class="centered"/>
+<img src="../../img, etc/lab4 screenshots/fokow/6/js-5.png" class="centered"/>
+<img src="../../img, etc/lab4 screenshots/fokow/6/js-6.png" class="centered"/>
+<hr>
+
+
+</body>
 </html>

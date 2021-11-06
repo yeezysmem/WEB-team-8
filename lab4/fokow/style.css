@@ -37,12 +37,74 @@ footer {
 }
 
 
-#set-alarm-container label {
-	display: inline-block;
+#clock {
+    color:rgb(58, 0, 232);
 }
-
-#buttons-container button {
-	display: inline-block;
+select {
+    width: 40px;
+    height: 40px;
+}
+#datepicker {
+    width: 140px;
+    height: 30px;
+    margin: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+#set-alarm-container label {
+    display: inline-block;
+}
+button {
+    display: inline-block;
     height: 30px;
     margin-top: 10px;
+}
+#set-alarm-container p {
+    float: left;    
+}
+#setCloseTime {
+    margin-left: 75px;
+    margin-top: 10px;
+}
+#top-bar {
+    display: block;
+    margin-left: 60px;
+}
+#top-bar::after  {
+    content: "";
+    display: block;
+    clear: both;
+}
+#main-area {
+    margin-left: 130px;
+    margin-top: 10px;
+}
+#alarm-list-container {
+    margin-top: 40px;
+}
+#setButton {
+    display: block;
+    width: 100px;
+    margin-left: 288px;
+}
+#alarm-message {
+    position: fixed;
+    left: 260px;
+    top: 200px;
+    border: 3px solid orange;
+    background-color: rgb(255, 244, 92);
+    text-align: center;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    width: 400px;
+    height: 140px;
+    font-size: 30px;
+    font-weight: 800;
+    color: rgb(247, 99, 0);
+    display: none;
+}
+#alarm-message button {
+    width: 70px;
+    height: 40px;
 }

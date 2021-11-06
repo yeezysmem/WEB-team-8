@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <title> Task 6 </title>
 </head>
 <body>
@@ -21,53 +24,55 @@
         </li>
     </ul>
     
-    
-    <div id='main-container'>
-        <h2>Current Time:</h2>
-        <h2 id='clock'></h2>
+
+    <div id="alarm-message">
+        <p>
+            It's time to Wake UP!
+        </p>
+        <button>
+            <em> Okay </em>
+        </button>
     </div>
+
+    <h2>Current Time:</h2>
+    <h2 id='clock'></h2>
     
     <div id='set-alarm-container'>
-        <h3>Set a new Alarm</h3>
-        <label>
-            <div> <select id='hoursMenu'></select> </div>
-        </label>
-        <label>
-            <div> <select id='minsMenu'></select> </div>
-        </label>
-        <label>
-            <div> <select id='secsMenu'></select> </div>
-        </label>
+        <div id="top-bar">
+            <h3> Set new Alarm: </h3>
+        </div>
+        
+        <div id = "main-area">
+            <label>
+                <div> h: <select id='hoursMenu' class="menu"></select> </div>
+            </label>
+            <label>
+                <div> min: <select id='minsMenu' class="menu"></select> </div>
+            </label>
+            <label>
+                <div> sec: <select id='secsMenu' class="menu"></select> </div>
+            </label>
+            <div id='dateMenu' class="menu"> <p> 
+                Date: <input type="text" id="datepicker">
+            </p> </div>
+            
+            <div id='buttons-container'>
+                <button id='setCloseTime' onClick='setCloseTime()'>
+                    Set time: current +6 sec
+                </button>
+                <button id='clearButton' onClick='clearAlarms()'>Clear Alarms</button>
+                <button id='setButton' onClick='setAlarm()'>Set Alarm</button>
+            </div>
+        </div>
     </div>
-    
-    
-    <div id='buttons-container'>
-        <button  id='setButton' onClick='alarmSet()'>Set Alarm</button>
-        <button  id='clearButton' onClick='alarmClear()'>Clear Alarm</button>
-    </div>
-    
     
     <div id='alarm-list-container'>
-        <ul id="list">
-            
+        <ul id="list-of-alarms">
         </ul>
     </div>
     
-    
-    
-    
-    
-    
     <footer></footer>
-    
     <script src="task6.js"></script>
-    
-    
-    
-    <!-- 
-        <input placeholder="Enter some text" name="name"/>
-        <p id="output"></p>
-    -->
     
 </body>
 </html>

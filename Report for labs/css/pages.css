@@ -6,7 +6,7 @@ body {
     font: 1em/1.4em sans-serif;
     background-color: #333339;
     color: #fff;
-
+    
 }
 
 a {
@@ -54,7 +54,7 @@ dl {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-
+    
     margin: 0.5em 0 0.5em 30px;
 }
 
@@ -74,4 +74,15 @@ dl.param dd {
 
 li {
     margin: 5px;
+}
+
+img {
+    max-width: 90%;
+    margin-top: 2px;
+}
+
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
