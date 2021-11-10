@@ -86,3 +86,7 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
+.empty-space {
+    height: 100px;
+}

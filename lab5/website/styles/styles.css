@@ -23,8 +23,8 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .categories-item {
@@ -42,11 +42,11 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .categories-item__monitor:hover::before {
@@ -65,7 +65,7 @@ a {
   background: #3B3E45;
   border-radius: 100px;
   -webkit-transform: rotate(-30.35deg);
-          transform: rotate(-30.35deg);
+  transform: rotate(-30.35deg);
 }
 
 .categories-item__monitor img {
@@ -79,11 +79,11 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .categories-item__motherboard:hover::before {
@@ -102,7 +102,7 @@ a {
   background: #7747b4;
   border-radius: 100px;
   -webkit-transform: rotate(-30.35deg);
-          transform: rotate(-30.35deg);
+  transform: rotate(-30.35deg);
 }
 
 .categories-item__motherboard img {
@@ -116,11 +116,11 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .categories-item__pc:hover::before {
@@ -139,7 +139,7 @@ a {
   background: #2C4C98;
   border-radius: 100px;
   -webkit-transform: rotate(-30.35deg);
-          transform: rotate(-30.35deg);
+  transform: rotate(-30.35deg);
 }
 
 .categories-item__pc img {
@@ -153,11 +153,11 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .categories-item__laptop:hover::before {
@@ -176,7 +176,7 @@ a {
   background: #B47B47;
   border-radius: 100px;
   -webkit-transform: rotate(-30.35deg);
-          transform: rotate(-30.35deg);
+  transform: rotate(-30.35deg);
 }
 
 .categories-item__laptop img {
@@ -190,11 +190,11 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .categories-item__components:hover::before {
@@ -213,7 +213,7 @@ a {
   background: #9B6281;
   border-radius: 100px;
   -webkit-transform: rotate(-30.35deg);
-          transform: rotate(-30.35deg);
+  transform: rotate(-30.35deg);
 }
 
 .categories-item__components img {
@@ -227,10 +227,10 @@ a {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .categories-item__content-name {
@@ -291,4 +291,74 @@ a {
 
 .video-slider {
   margin-bottom: 100px;
+}
+
+
+
+/*////*/
+
+
+#main-image {
+  display: block; 
+  margin: auto; 
+  width: 100%; 
+  border-radius: 40px; 
+  margin-top: 40px; 
+  border: 1px solid #2c2f37;
+}
+
+td img {
+  max-width: 100%;
+  max-height: 230px;
+  margin-top: 10px;
+}
+
+#submit_btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: auto;
+}
+
+#submit_btn:hover {
+  opacity: 0.8;
+}
+
+#go_to_all_labs_btn {
+  font-size: 16px;
+  
+  padding: 16px 32px;
+  margin-right: 10%;
+  
+  transition-duration: 0.1s;
+  cursor: pointer;
+  float: right;
+  
+  background-color: #f2fcff;
+  border: 1px solid black;
+}
+
+#go_to_all_labs_btn:hover {
+  background-color: #d5f5ff;
+}
+
+#go_to_all_labs_btn:active {
+  color: black;
+  background-color: #bef0ff;
+}
+
+li {
+  list-style-type: none;
+}
+
+/*//*/
+
+
+#price-slider{
+  width: 500px;
+  margin-left: 50px;
+  margin-bottom: 30px; 
 }
