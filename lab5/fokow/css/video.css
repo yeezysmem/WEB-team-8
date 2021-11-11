@@ -5,21 +5,20 @@ html, body {
 }
 
 h1.main-title {
-    border: 2px solid black;
+    border-bottom: 2px solid black;
     color: white;
     font: 50px/1 "fantasy";
 
-    padding: 30px;
+    padding: 20px;
 
     display: block;
     position: absolute;
-    top: 8%;
     left: 50%;
-    transform: translate(-50%, -8%);
+    transform: translate(-50%, 0%);
 }
 
 p.shop-link {
-    border: 2px solid black;
+    border: 1px dotted black;
     color: white;
     font-size: 20px;
 
