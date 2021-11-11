@@ -49,3 +49,7 @@ td {
     border-bottom: 20px solid #8D5CF6;
     border-radius: 0 0 15px 15px;
 }
+
+.empty-space {
+    height: 80px;
+}

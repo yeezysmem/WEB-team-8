@@ -6,7 +6,7 @@ body {
     font: 1em/1.4em sans-serif;
     background-color: #333339;
     color: #fff;
-
+    
 }
 h3 {
     display: flex;
@@ -71,9 +71,13 @@ ul {
     width: 4px;
     height: 4px;
     background-color: #2C2C33;
-  }
+}
 
-  ::-webkit-scrollbar-thumb { /* 5 - ползунок */
+::-webkit-scrollbar-thumb { /* 5 - ползунок */
     border-radius: 2px;
     background-color: #8D5CF6;
-  }
+}
+
+.empty-space {
+    height: 150px;
+}

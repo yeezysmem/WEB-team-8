@@ -1,0 +1,32 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h1.main-title {
+    border: 2px solid black;
+    color: white;
+    font: 50px/1 "fantasy";
+
+    padding: 30px;
+
+    display: block;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -8%);
+}
+
+p.shop-link {
+    border: 2px solid black;
+    color: white;
+    font-size: 20px;
+
+    padding: 10px 30px;
+    display: block;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -95%);
+}
