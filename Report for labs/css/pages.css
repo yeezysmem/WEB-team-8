@@ -87,6 +87,12 @@ img {
     margin-right: auto;
 }
 
+img.left-aligned {
+    display: block;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
 .empty-space {
     height: 100px;
 }
