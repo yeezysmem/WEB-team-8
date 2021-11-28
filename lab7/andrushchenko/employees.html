@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	label{
+		display: inline-block;
+		width: 100px;
+		margin-bottom: 10px;
+	}
+</style>
+<title>Lab 7</title>
+</head>
+<body>
+	
+	<h1>Add new employee!</h1>
+	<form method="post" action="processEmp.php">
+		<label>First name: </label>
+		<input type="text" name="first_name" /><br />
+		<label>last name: </label>
+		<input type="text" name="last_name" /><br />
+		<label>Patronymic: </label>
+		<input type="text" name="patronymic" /><br />
+		<label>Phone number: </label>
+		<input type="text" name="emp_phone_number" /><br />
+		<label>TIN: </label>
+		<input type="number" name="tin" /><br />
+		<label>Position: </label>
+		<input type="text" name="position" /><br />
+		<label>Salary: </label>
+		<input type="number" name="salary" step="0.01" /><br />
+		<input type="submit" value="Add new medicine" />
+	</form>
+
+</body>
+</html>
