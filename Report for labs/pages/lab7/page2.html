@@ -4,6 +4,39 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/pages.css">
     <title> Андрущенко Ярослав </title>
+    <style type="text/css">
+        
+        table {
+          table-layout: fixed;
+          width: 70%;
+          border-collapse: collapse;
+          border: 3px solid purple;
+        }
+        
+        thead th:nth-child(1) {
+          width: 30%;
+        }
+        
+        thead th:nth-child(2) {
+          width: 20%;
+        }
+        
+        thead th:nth-child(3) {
+          width: 15%;
+        }
+        
+        thead th:nth-child(4) {
+          width: 35%;
+        }
+        
+        th, td {
+          padding: 10px;
+        }
+
+        #first{
+            border: 1px solid white;
+        }
+    </style>
 </head>
 <body>
     <h2> Андрущенко Ярослав </h2>
@@ -12,16 +45,201 @@
         <a href="../../../lab7/andrushchenko/index.php" target="_blank">Аптека</a>.
     </p>
     
-    <h2> заголовок: </h2>
+    <h2> Предметна область</h2>
     <p>
-        ##############
+        <b>Аптека</b>
     </p> <br />
     
-    <h2> заголовок: </h2>
+    <h2> Сутності та їх атрибути, виділені відповідно до предметної області </h2>
     <p>
-        ##############
+        Відповідно до предметної області "Аптека" було виділено наступні сутності та їх атрибути.
     </p> <br />
+
+    <table>
+        <tr id="first">
+          <th>Сутності</th>
+          <th>Атрибути</th>
+        </tr>
+        <tr>
+            <td>Постачальники</td>
+            <td>ID</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Назва</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Адреса</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Місто</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Країна</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Представник</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Контактний номер телефону</td>
+        </tr>
+        <tr>
+            <td>Медикаменти</td>
+            <td>ID</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>ID Постачальника</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Назва</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Призначення</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Ціна купівлі</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Ціна продажу</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Необхідність рецепту</td>
+        </tr>
+        <tr>
+            <td>Замовлення</td>
+            <td>ID</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>ID Медикаменту</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Адреса</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>ID Працівника</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Дата замовлення</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Час замовлення</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Вартість замовлення</td>
+        </tr>
+        <tr>
+            <td>Працівники</td>
+            <td>ID</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Ім'я</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Прізвище</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>По-батькові</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Контактний номер телефону</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>ІПН</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Посада</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Заробітна плата</td>
+        </tr>
+    </table>
+
+    <h1>Інфологічна модель</h1>
+    <p>
+        Відповідно до виділених сутностей була побудована інфологічна модель у вигляді ER-діаграми за нотацією П. Чена, зображена на наступному зображенні.
+    </p><br />
+    <img src="../../img, etc/lab7 screenshots/infological.png">
     
+    <h1>Даталогічна модель</h1>
+    <p>
+        Використовуючи попередньо побудовану інфологічну модель була побудована даталогічна модель у вигляді схеми даних, зображена на наступному зображенні. Усі відношення знаходяться у 3НФ, а отже знаходяться у 2НФ та 1НФ.
+    </p><br />
+    <img src="../../img, etc/lab7 screenshots/datalogical.png">
+
+    <h1>Побудова фізичної реалізації</h1>
+    <p>
+        Використовуючи phpMyAdmin для роботи із сервером MySQL була побудована фізична реалізація бази даних. Фізична модель цієї реалізації можна побачити на наступному зображенні.
+    </p><br />
+    <img src="../../img, etc/lab7 screenshots/physical.png">
+
+    <h1>Скрипти для внесення даних до БД</h1>
+    <p>
+        Використовуючи мову програмування PHP були написані наступні скрипти для внесення даних до таблиць БД.
+    </p><br />
+    <img src="../../img, etc/lab7 screenshots/php_insert_1.png">
+    <img src="../../img, etc/lab7 screenshots/php_insert_2.png">
+    <img src="../../img, etc/lab7 screenshots/php_insert_3.png">
+    <img src="../../img, etc/lab7 screenshots/php_insert_4.png">
+    <p>
+        Графічний інтерфейс для внесення даних зображений на наступному малюнку.
+    </p>
+    <img src="../../img, etc/lab7 screenshots/using_insert_1.png">
+    <img src="../../img, etc/lab7 screenshots/using_insert_2.png">
+    <img src="../../img, etc/lab7 screenshots/using_insert_3.png">
+    <img src="../../img, etc/lab7 screenshots/using_insert_4.png">
+
+    <h1>Скрипти для пошуку даних у БД</h1>
+    <p>
+        Використовуючи мову програмування PHP були написані наступні скрипти для пошуку даних у БД.
+    </p><br />
+    <img src="../../img, etc/lab7 screenshots/php_select_1.png">
+    <img src="../../img, etc/lab7 screenshots/php_select_2.png">
+    <img src="../../img, etc/lab7 screenshots/php_select_3.png">
+    <img src="../../img, etc/lab7 screenshots/php_select_4.png">
+    <p>
+        Графічний інтерфейс для пошуку даних зображений на наступному малюнку.
+    </p>
+    <img src="../../img, etc/lab7 screenshots/select_using.png">
+
+    <h1>Скрипти для виведення даних БД на екран відповідно до результатів пошуку</h1>
+    <p>
+        Використовуючи мову програмування PHP були написані наступні скрипти для виведення даних БД на екран.
+    </p><br />
+    <img src="../../img, etc/lab7 screenshots/php_represent_1.png">
+    <img src="../../img, etc/lab7 screenshots/php_represent_2.png">
+    <img src="../../img, etc/lab7 screenshots/php_represent_3.png">
+    <img src="../../img, etc/lab7 screenshots/php_represent_4.png">
+    <p>
+        Графічний інтерфейс для виведення даних зображений на наступному малюнку.
+    </p>
+    <img src="../../img, etc/lab7 screenshots/using_represent_1.png">
+    <img src="../../img, etc/lab7 screenshots/using_represent_2.png">
+    <img src="../../img, etc/lab7 screenshots/using_represent_3.png">
+    <img src="../../img, etc/lab7 screenshots/using_represent_4.png">
     
 </body>
 </html>
