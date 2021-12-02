@@ -5,21 +5,52 @@
     <link rel="stylesheet" href="../../css/pages.css">
     <title> Толубко Володимир </title>
 </head>
+<style>
+    b {
+        margin-left:10px;
+    }
+    .atr {
+        margin-left:20px;
+    }
+    .cod {
+        margin-left: 30px;
+    }
+</style>
 <body>
     <h2> Толубко Володимир </h2>
-    <h3> Варіант ######## </h3>
+    <h3> Варіант 7 </h3>
     <p>Посилання на застосунок:
-        <a href="../../../lab7/########/index.php" target="_blank">#####Аптека######</a>.
+        <a href="http://lab7radio/" target="_blank">#####lab7radio######</a>.
     </p>
     
      <h2> заголовок: </h2>
         <p>
-            ##############
+            Довідник з радіотехніки
         </p> <br />
 
     <h2> заголовок: </h2>
         <p>
-            ##############
+            Відповідно до предметної області "Аптека" було виділено наступні сутності та їх атрибути.
+            <br />
+            <b>Сутність "books" :</b> <br /><i class="atr">Атрибути :</i><br />
+                <code>
+                - ID_book;<br />
+                - Name;<br />
+                - Year;<br />
+                - Country.<br />
+                </code>
+                <b>Сутність "authors" :</b> <br /><i class="atr">Атрибути :</i><br />
+                <code>
+                - ID_author<br />
+                - Fname;<br />
+                - Sname.<br />
+                </code>
+            <b>Сутність "authors_books" :</b> <br /><i class="atr">Атрибути :</i><br />
+                <code class="cod">
+                - ID;<br />
+                - ID_book;<br />
+                - ID_author.
+                </code>
         </p> <br />
 
     
