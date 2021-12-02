@@ -4,24 +4,326 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/pages.css">
     <title> Жданов Даніїл </title>
+    <style type="text/css">
+        
+        table {
+          table-layout: fixed;
+          width: 70%;
+          border-collapse: collapse;
+          border: 3px solid purple;
+        }
+        
+        thead th:nth-child(1) {
+          width: 30%;
+        }
+        
+        thead th:nth-child(2) {
+          width: 20%;
+        }
+        
+        thead th:nth-child(3) {
+          width: 15%;
+        }
+        
+        thead th:nth-child(4) {
+          width: 35%;
+        }
+        
+        th, td {
+          padding: 10px;
+        }
+
+        #first{
+            border: 1px solid white;
+        }
+    </style>
 </head>
 <body>
     <h2> Жданов Даніїл </h2>
-    <h3> Варіант ######## </h3>
+    <h3> Варіант 9 </h3>
     <p>Посилання на застосунок:
-        <a href="../../../lab7/########/index.php" target="_blank">#####Аптека######</a>.
+        <a href="../../../lab7/zhdanov/index.php">TVPROGRAMS</a>.
     </p>
     
-    <h2> заголовок: </h2>
-        <p>
-            ##############
-        </p> <br />
+    <h2> Предметна область</h2>
+    <p>
+        <b>TVPROGRAMS</b>
+    </p> <br />
+    
+    <h2> Сутності та їх атрибути, виділені відповідно до предметної області </h2>
+    <p>
+        Відповідно до предметної області "Аптека" було виділено наступні сутності та їх атрибути.
+    </p> <br />
 
-    <h2> заголовок: </h2>
-        <p>
-            ##############
-        </p> <br />
+    <table>
+        <tr id="first">
+          <th>Сутності</th>
+          <th>Атрибути</th>
+        </tr>
+        <tr>
+            <td>ТВ программи</td>
+            <td>ID</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>Назва</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>date</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>start_time</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>finish_time</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>num_program</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>num_channel</td>
+        </tr>
+        <tr>
+            <td>Канали</td>
+            <td>ID</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>channel</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>specification</td>
+        </tr>
+        <tr>
+            <td>ТВ ШОУ</td>
+            <td>ID</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>tv_show</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>genre</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>description</td>
+        </tr>
+    </table>
 
+   
+    <h1>Даталогічна модель</h1>
+    
+    <img src="../../img, etc/lab7 screenshots/datalogmodel.png">
+    <h1>Фізична модель</h1>
+    <p>
+        Використовуючи попередньо побудовану інфологічну модель була побудована даталогічна модель у вигляді схеми даних, зображена на наступному зображенні. Усі відношення знаходяться у 3НФ, а отже знаходяться у 2НФ та 1НФ.
+    </p><br />
+    <img src="../../img, etc/lab7 screenshots/8.png">
+
+    <h1>Скрипти для внесення даних до БД</h1>
+    <p>
+        Використовуючи мову програмування PHP були написані наступні скрипти для внесення даних до таблиць БД.
+    </p><br />
+    <xmp>
+        <?php include 'database.php'; ?>
+
+<?php
+
+	$date = $_POST['date'];
+	$start_time = $_POST['start_time'];
+	$finish_time = $_POST['finish_time'];
+	$num_program = $_POST['num_program'];
+	$num_channel = $_POST['num_channel'];
+
+mysqli_query($connect, "INSERT INTO `tv_programs` (`id`, `date`, `start_time`, `finish_time`, `num_program`, `num_channel`) VALUES (NULL, '$date', '$start_time', '$finish_time', NULL, NULL)");
+
+
+
+    </xmp>
+    
+    <br>
+    <xmp>
+        <?php include 'database.php'; ?>
+
+<?php
+
+	$tv_show = $_POST['tv_show'];
+	$genre = $_POST['genre'];
+	$description = $_POST['description'];
+
+mysqli_query($connect, "INSERT INTO `tv_shows` (`id`,`tv_show`, `genre`, `description`) VALUES(NULL, '$tv_show', '$genre', '$description')");
+
+    </xmp>
+
+    <xmp>
+        <?php include 'database.php'; ?>
+
+<?php
+
+	$channel = $_POST['channel'];
+	$specialization = $_POST['specialization'];
+
+mysqli_query($connect, "INSERT INTO `channels` (`channel`, `specialization`) VALUES ('$channel', '$specialization')");
+
+
+    </xmp>
+    <p>
+        Графічний інтерфейс для внесення даних зображений на наступному малюнку.
+    </p>
+    <img src="../../img, etc/lab7 screenshots/1.png">
+    <img src="../../img, etc/lab7 screenshots/2.png">
+    <img src="../../img, etc/lab7 screenshots/3.png">
+    <img src="../../img, etc/lab7 screenshots/4.png">
+
+    <h1>Скрипти для пошуку даних у БД</h1>
+    <xmp>
+        <?php
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+$link = mysqli_connect("localhost", "root", "", "tvprogram");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+// Attempt select query execution
+$sql = "SELECT * FROM `channels`";
+if($result = mysqli_query($link, $sql)){
+    if(mysqli_num_rows($result) > 0){
+        echo "<table>";
+            echo "<tr>";
+                echo "<th>channel</th>";
+                echo "<th>specialization</th>";
+            echo "</tr>";
+        while($row = mysqli_fetch_array($result)){
+            echo "<tr>";
+                echo "<td>" . $row['channel'] . "</td>";
+                echo "<td>" . $row['specialization'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+        // Free result set
+        mysqli_free_result($result);
+    } else{
+        echo "No records matching your query were found.";
+    }
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}
+ 
+// Close connection
+mysqli_close($link);
+?>
+    </xmp>
+
+    <br>
+    <xmp>
+        <?php
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+$link = mysqli_connect("localhost", "root", "", "tvprogram");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+
+
+ 
+// Attempt select query execution
+$sql = "SELECT * FROM `tv_programs`";
+if($result = mysqli_query($link, $sql)){
+    if(mysqli_num_rows($result) > 0){
+        echo "<table>";
+            echo "<tr>";
+                echo "<th>date</th>";
+                echo "<th>start_time</th>";
+                echo "<th>finish_time</th>";
+                echo "<th>num_program</th>";
+                echo "<th>num_channel</th>";
+            echo "</tr>";
+        while($row = mysqli_fetch_array($result)){
+            echo "<tr>";
+                echo "<td>" . $row['date'] . "</td>";
+                echo "<td>" . $row['start_time'] . "</td>";
+                echo "<td>" . $row['finish_time'] . "</td>";
+                echo "<td>" . $row['num_program'] . "</td>";
+                echo "<td>" . $row['num_channel'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+        // Free result set
+        mysqli_free_result($result);
+    } else{
+        echo "No records matching your query were found.";
+    }
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}
+ 
+// Close connection
+mysqli_close($link);
+?>
+    </xmp>
+    <br>
+    <xmp>
+        <?php
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+$link = mysqli_connect("localhost", "root", "", "tvprogram");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+// Attempt select query execution
+$sql = "SELECT * FROM `tv_shows`";
+if($result = mysqli_query($link, $sql)){
+    if(mysqli_num_rows($result) > 0){
+        echo "<table>";
+            echo "<tr>";
+                echo "<th>tv_show</th>";
+                echo "<th>genre</th>";
+                echo "<th>description</th>";
+            echo "</tr>";
+        while($row = mysqli_fetch_array($result)){
+            echo "<tr>";
+                echo "<td>" . $row['tv_show'] . "</td>";
+                echo "<td>" . $row['genre'] . "</td>";
+                echo "<td>" . $row['description'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+        // Free result set
+        mysqli_free_result($result);
+    } else{
+        echo "No records matching your query were found.";
+    }
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}
+ 
+// Close connection
+mysqli_close($link);
+?>
+    </xmp>
+
+    <p>
+        Графічний інтерфейс для пошуку даних зображений на наступному малюнку.
+    </p><br />
+    <img src="../../img, etc/lab7 screenshots/5.png">
+    <img src="../../img, etc/lab7 screenshots/6.png">
+    <img src="../../img, etc/lab7 screenshots/7.png">
     
 </body>
 </html>
