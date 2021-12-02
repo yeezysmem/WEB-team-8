@@ -1,0 +1,78 @@
+
+/* For user inputs */
+label {
+    display: inline-block;
+    min-width: 170px;
+    margin-bottom: 10px;
+}
+
+input, select {
+    margin: 10px 0px;
+    min-width: 150px;
+    padding: 10px;
+}
+
+input[type=submit] {
+    display: block;
+    min-height: 40px;
+    margin: 25px 0px;
+}
+
+select {
+    min-width: 300px;
+}
+
+li {
+    padding: 4px;
+}
+
+
+/* Classes */
+.instruction {
+    font-size: 20px;
+    color: darkblue;
+}
+
+.long_break {
+    height: 100px;
+}
+
+
+/* Tables */
+table, td, th {
+  border: 1px solid black;
+  padding: 10px 30px;
+  text-align: center;
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+
+/* Positioning */
+.add_menu {
+    float: left;
+}
+
+.inf_model {
+    margin-bottom: -60px;
+    overflow: hidden;
+}
+
+img {
+    float: right;
+    max-height: 100%; 
+    max-width: min(700px, 94%);
+    margin-right: 6%;
+}
+
+.clear {
+  clear: both;
+}
+
+
+
+
+
