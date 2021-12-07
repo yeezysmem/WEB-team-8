@@ -10,15 +10,9 @@ require 'config/connect.php';
   <title>8store.ua</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-  rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles/styles.css" />
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css  "
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css  "/>
   <link rel="stylesheet" type="text/css" href="jQuery/jquery-ui.css">
   <style>
   .ui-menu { width: 200px; }
@@ -40,14 +34,42 @@ require 'config/connect.php';
 
   <!-- Регистрация и Атвторизация -->
   <section class="regaut">
+  <a href="DATA/data.php">проверка данных</a>
     <div class="container">
-      <h2>Registration and Authorization</h2>
-      <form action="regaut/regaut.php" method="post">
-        <input type="text" name="name" id="name" placeholder="Введите имя"><br><br>
-        <input type="text" name="login" id="login" placeholder="Введите логин"><br><br>
-        <input type="text" name="password" id="password" placeholder="Введите пароль"><br><br>
-        <button type="submit">Регистрация</button>
-      </form>
+    <?php
+        if($_COOKIE['user'] == ''):
+      ?>
+    <h2>Registration and Authorization</h2>
+
+      <div class="row">
+        <div class="col">
+          <h4>Registration</h4>
+          <form action="regaut/reg.php" method="post">
+            <input type="text" name="name" id="name" placeholder="Введите имя"><br><br>
+            <input type="text" name="login" id="login" placeholder="Введите логин"><br><br>
+            <input type="text" name="password" id="password" placeholder="Введите пароль"><br><br>
+              <button type="submit">Регистрация</button>
+          </form>
+        </div>
+        <div class="col">
+          <h4>Authorization</h4>
+          <form action="regaut/aut.php" method="post">
+              <input type="text" name="login" id="login" placeholder="Введите логин"><br><br>
+              <input type="text" name="password" id="password" placeholder="Введите пароль"><br><br>
+                <button type="submit">Атвторизация</button>
+          </form>
+        </div>
+      </div>
+      <?php
+        else:
+      ?>
+
+          <h1 class="Hi">Добро пожаловать <?=$_COOKIE['user']?>!!!</h1>
+          <a href="regaut/exit.php">Exit<a>
+
+      <?php
+        endif;
+      ?>
     </div>
   </section>
   
