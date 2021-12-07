@@ -14,11 +14,13 @@ a {
   margin: auto;
 }
 
-.categories {
+.categories,
+.regaut {
   padding-top: 50px;
 }
 
-.categories h2 {
+.categories h2, 
+.regaut h2{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

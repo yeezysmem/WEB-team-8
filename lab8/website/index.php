@@ -1,3 +1,8 @@
+<?php
+
+require 'config/connect.php';
+
+?>
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -32,6 +37,19 @@
   <div class="container">
     <img src="images/mainbg.png" id="main-image" />
   </div>
+
+  <!-- Регистрация и Атвторизация -->
+  <section class="regaut">
+    <div class="container">
+      <h2>Registration and Authorization</h2>
+      <form action="regaut/regaut.php" method="post">
+        <input type="text" name="name" id="name" placeholder="Введите имя"><br><br>
+        <input type="text" name="login" id="login" placeholder="Введите логин"><br><br>
+        <input type="text" name="password" id="password" placeholder="Введите пароль"><br><br>
+        <button type="submit">Регистрация</button>
+      </form>
+    </div>
+  </section>
   
   <section class="categories">
     
