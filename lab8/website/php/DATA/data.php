@@ -1,11 +1,17 @@
 <?php
 
-require '../config/connect.php';
+require_once __DIR__ . '/../config/connect.php';
+
+if (isset($_COOKIE['lang'])) {
+    $lang = $_COOKIE['lang'];
+  } else {
+    $lang = 'en';
+  }
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="$lang">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,6 +72,6 @@ require '../config/connect.php';
         ?>
     </table>
 
-    <a href="../index.php">НАЗАД</a>
+    <a href="../../index.php">НАЗАД</a>
 </body>
 </html>

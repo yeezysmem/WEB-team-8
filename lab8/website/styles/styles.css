@@ -2,6 +2,7 @@ body {
   font-family: "Montserrat", sans-serif;
   background: #1D1D1D;
   color: #fff;
+  padding: 40px;
 }
 
 a {
@@ -390,4 +391,30 @@ li {
   width: 500px;
   margin-left: 50px;
   margin-bottom: 30px; 
+}
+
+
+
+/* Text on the left */
+.current-lang {
+  float: left;
+}
+
+/* Flags Container */
+.flags {
+  float: right;
+  padding: 0px 20px;
+  margin: -20px 0px 20px;
+}
+
+/* Flag Icon */
+.flag-icon {
+  padding: 15px 20px;
+  margin: 0px 20px;
+  
+  border: 1px solid transparent;
+}
+
+.flag-icon:hover {
+  background-color: orange;
 }
