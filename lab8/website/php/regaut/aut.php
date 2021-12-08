@@ -1,6 +1,6 @@
 <?php
 
-require '../config/connect.php';
+require_once __DIR__ . '/../config/connect.php';
 
 $login = filter_var(trim($_POST['login']), 
 FILTER_SANITIZE_STRING);
@@ -19,4 +19,4 @@ if(count($user) == 0) {
 
 setcookie('user', $user['name'], time() + 3600, "/");
 
-header('Location: ../index.php');
+header('Location: ../../index.php');
