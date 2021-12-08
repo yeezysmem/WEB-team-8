@@ -42,7 +42,7 @@ require '../config/connect.php';
          */
 
         $users = mysqli_query($connect, "SELECT * FROM `users`");
-        
+
         /*
          * Преобразовываем полученные данные в нормальный массив
          */
@@ -62,7 +62,7 @@ require '../config/connect.php';
                 <td><?= $users[3] ?></td>
             </tr>
             <?php
-        }
+            }
         ?>
     </table>
 
