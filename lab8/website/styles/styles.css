@@ -13,6 +13,7 @@ a {
 .container {
   max-width: 1170px;
   margin: auto;
+  clear: both;
 }
 
 
@@ -395,9 +396,32 @@ li {
 
 
 
-/* Text on the left */
-.current-lang {
+
+
+/* Transfered this here in lab8 */
+
+.ui-menu {
+  width: 200px;
+}
+
+.ui-widget-header {
+  padding: 0.2em;
+}
+
+#sidemenu {
+  margin-right: 50px;
+  margin-top: 0px;
+}
+
+
+
+
+/* Language change: */
+
+/* Chosen language - on the left */
+#chosen-language {
   float: left;
+  margin: 25px;
 }
 
 /* Flags Container */
@@ -418,3 +442,19 @@ li {
 .flag-icon:hover {
   background-color: orange;
 }
+
+
+
+/* Other: */
+
+h1#greeting {
+  text-align: center;
+}
+
+
+
+/* 
+
+... 
+
+*/

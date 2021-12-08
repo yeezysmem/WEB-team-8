@@ -16,79 +16,82 @@ if (isset($_COOKIE['lang'])) {
   <meta charset="UTF-8" />
   <title>8store.ua</title>
 
-  <!-- Flags CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/css/flag-icons.min.css" integrity="sha512-UwbBNAFoECXUPeDhlKR3zzWU3j8ddKIQQsDOsKhXQGdiB5i3IHEXr9kXx82+gaHigbNKbTDp3VY/G6gZqva6ZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <!-- CSS: -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css  " />
   <link rel="stylesheet" type="text/css" href="jQuery/jquery-ui.css">
+  <!-- CSS for Flags: -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/css/flag-icons.min.css" integrity="sha512-UwbBNAFoECXUPeDhlKR3zzWU3j8ddKIQQsDOsKhXQGdiB5i3IHEXr9kXx82+gaHigbNKbTDp3VY/G6gZqva6ZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <style>
-    .ui-menu {
-      width: 200px;
-    }
 
-    .ui-widget-header {
-      padding: 0.2em;
-    }
-
-    #sidemenu {
-      margin-right: 50px;
-      margin-top: 0px;
-    }
-  </style>
-
-  <script src="jQuery/external/jquery/jquery.js"></script>
+  <!-- У меня это не работает: -->
+  <!-- <script src="jQuery/external/jquery/jquery.js"></script>
   <script src="jQuery/jquery-ui.js"></script>
-  <script src="script/main.js"></script>
+  <script src="script/main.js"></script> -->
+
+
+  <!-- JavaScript: -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="script/languages/en.js"></script>
+  <script src="script/languages/ru.js"></script>
+  <script src="script/languages/uk.js"></script>
+
+  <script src="script/lang.js"></script>
 </head>
 
 
 
 
 <body>
+  <!-- 
+В этом файле текст вписан в теги просто чтобы было понятно, 
+где что находится.
 
+В них вообще может не быть никакого текста. 
+
+Текст в них никак не влияет на текст на страничке,
+потому что он берётся из файлов script/languages/*.js -
+то есть заменятся на выбранный пользователем язык.
+-->
+
+  <p id="chosen-language">
+    Chosen language: English;
+  </p>
 
   <!-- Смена Языка -->
-  <div class="current-lang">
-    <p> Current language:
-      <?php
-      switch ($lang) {
-        case 'en':
-          echo "English";
-          break;
-        case 'ru':
-          echo "Русский";
-          break;
-        case 'uk':
-          echo "Українська";
-          break;
-      }
-      ?> </p>
-  </div>
-
   <div class="flags">
     <p>
-      Choose your language:
-      <a href="php/set-lang.php?lang=en"><span class="flag-icon flag-icon-us"></span></a>
-      <a href="php/set-lang.php?lang=ru"><span class="flag-icon flag-icon-ru"></span></a>
-      <a href="php/set-lang.php?lang=uk"><span class="flag-icon flag-icon-ua"></span></a>
+      <span id="choose-your-lang">Choose your language:</span>
+      <a href="#" onclick="setLanguage('en')"><span class="flag-icon flag-icon-us"></span></a>
+      <a href="#" onclick="setLanguage('ru')"><span class="flag-icon flag-icon-ru"></span></a>
+      <a href="#" onclick="setLanguage('uk')"><span class="flag-icon flag-icon-ua"></span></a>
     </p>
   </div>
   <!-- ----- -->
+
+  <h1 id="greeting" style="clear: both">Hello</h1>
 
   <div class="container">
     <img src="images/mainbg.png" id="main-image" />
   </div>
 
 
+  
+<!-- Дальше этого момента не переводил -->
+<!--  -->
+<!--  -->
+<!--  -->
+
+
   <!-- Регистрация и Авторизация -->
   <section class="regaut">
     <p>
-      <a href="php/DATA/data.php">Проверить данные</a>
+      <a href="php/DATA/data.php">
+        <span id="check-user-data">Проверить данные</span> </a>
     </p>
 
     <div class="container">
@@ -105,29 +108,29 @@ if (isset($_COOKIE['lang'])) {
               <input type="text" name="login" id="login" placeholder="Введите логин"><br><br>
               <input type="text" name="password" id="password" placeholder="Введите пароль"><br><br>
               <button type="submit">Регистрация</button>
-          </form>
-        </div>
-        <div class="col">
-          <h4>Authorization</h4>
-          <form action="php/regaut/aut.php" method="post">
-            <p>Введите логин</p>
+            </form>
+          </div>
+          <div class="col">
+            <h4>Authorization</h4>
+            <form action="php/regaut/aut.php" method="post">
+              <p>Введите логин</p>
               <input type="text" name="login" id="login">
-            <p>Введите пароль</p>
-              <input type="text" name="password" id="password" ><br><br>
-                <button type="submit">Авторизация</button>
-          </form>
-        </div>
-      <?php
+              <p>Введите пароль</p>
+              <input type="text" name="password" id="password"><br><br>
+              <button type="submit">Авторизация</button>
+            </form>
+          </div>
+        <?php
       else :
-      ?>
+        ?>
 
-        <h1 class="Hi">Добро пожаловать <?= $_COOKIE['user'] ?>!!!</h1>
-        <a href="php/regaut/exit.php">Exit<a>
+          <h1 class="Hi">Добро пожаловать <?= $_COOKIE['user'] ?>!!!</h1>
+          <a href="php/regaut/exit.php">Exit<a>
 
-          <?php
-        endif;
-          ?>
-    </div>
+            <?php
+          endif;
+            ?>
+        </div>
   </section>
 
   <section class="categories">
@@ -221,7 +224,7 @@ if (isset($_COOKIE['lang'])) {
 
   <h2>Have any questions?</h2>
   <h2>Fill the form and we will call you back!</h2>
-  <form action="./task.php" method="post">
+  <form action="php/call-me-back.php" method="post">
     <fieldset>
       <div>
         <label for="firstname">Name</label>
@@ -245,7 +248,8 @@ if (isset($_COOKIE['lang'])) {
       <div>
         <p>
           8store.ua - is a new player in the electronics market.</p>
-        <p>Our online store is designed to sell electronics for every taste and color. The range includes
+        <p>
+          Our online store is designed to sell electronics for every taste and color. The range includes
           everything for a gamer, student or ordinary office worker. A large selection of components for
           computers, a wide range of laptops. And most importantly - all this at a low price. We are here for
           you!
