@@ -55,9 +55,9 @@ require 'config/connect.php';
           <h4>Authorization</h4>
           <form action="regaut/aut.php" method="post">
             <p>Введите логин</p>
-              <input type="text" name="login" id="login" value="<?php echo $login ?>">
+              <input type="text" name="login" id="login">
             <p>Введите пароль</p>
-              <input type="text" name="password" id="password" <?php echo $password ?>><br><br>
+              <input type="text" name="password" id="password" ><br><br>
                 <button type="submit">Атвторизация</button>
           </form>
         </div>

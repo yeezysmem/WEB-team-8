@@ -9,7 +9,7 @@ FILTER_SANITIZE_STRING);
 $password = filter_var(trim($_POST['password']), 
 FILTER_SANITIZE_STRING);
 
-// $password = md5($password."pass12345");
+$password = md5($password."pass12345");
 
 mysqli_query($connect, "INSERT INTO `users` (`id`, `name`, `login`, `password`) VALUES (NULL, '$name', '$login', '$password')");
 
