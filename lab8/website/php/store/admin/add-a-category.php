@@ -35,6 +35,7 @@ if (isset($_POST['addACategory'])) {
 	if (mysqli_affected_rows($connect) > 0) {
 		header('Location: admin-panel.php?add=Category&result=success');
 	} else {
-		header('Location: admin-panel.php?add=Category&result=failure&error=' . str_replace(' ', '|', mysqli_error($connect)));
+		header('Location: admin-panel.php?add=Category&result=failure&error=' 
+		. str_replace(' ', '|', mysqli_error($connect)));
 	}
 }
