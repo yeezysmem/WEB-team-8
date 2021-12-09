@@ -157,7 +157,7 @@ session_start([
 
               <input type="submit" class="button" value="Авторизация"></input>
             </form>
-          </div>
+          
 
 
           <!-- Скрывать / показывать пароль -->
@@ -176,7 +176,9 @@ session_start([
           <?php
           if (isset($_GET['login-attempt']) and $_GET['login-attempt'] == 'failed') {
             echo "<h3 style=\"color:pink\">Пользователь не найден! Неверный логин или пароль. Попробуйте ещё раз.</h3>";
-          }
+          } ?>
+          </div>
+          <?php
         } else {
 
 
