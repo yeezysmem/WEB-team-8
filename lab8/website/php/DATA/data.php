@@ -1,17 +1,14 @@
 <?php
 
 require_once __DIR__ . '/../config/connect.php';
+require_once __DIR__ . '/../store/includes/helper_functions.php';
 
-if (isset($_COOKIE['lang'])) {
-    $lang = $_COOKIE['lang'];
-  } else {
-    $lang = 'en';
-  }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="$lang">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +16,8 @@ if (isset($_COOKIE['lang'])) {
     <title>Document</title>
 </head>
 <style>
-        th, td {
+    th,
+    td {
         padding: 10px;
     }
 
@@ -32,46 +30,68 @@ if (isset($_COOKIE['lang'])) {
         background: #b5b5b5;
     }
 </style>
+
 <body>
     <table>
         <tr>
             <th>ID</th>
-            <th>Name</th>
             <th>Login</th>
             <th>Password</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Is admin?</th>
         </tr>
 
         <?php
 
-        /*
-         * Делаем выборку всех строк из таблицы "authors"
-         */
+        // 
+        //  Делаем выборку всех строк из таблицы "authors"
+        //  
+        $sql = "SELECT id, login, password, name, surname, is_admin
+        FROM `users`";
+        $users = mysqli_query($connect, $sql);
 
-        $users = mysqli_query($connect, "SELECT * FROM `users`");
+        // Используем функцию, определённую в файле 
+        // '../store/includes/helper_functions.php'
+        table_body_from($users);
 
-        /*
-         * Преобразовываем полученные данные в нормальный массив
-         */
 
-        $users = mysqli_fetch_all($users);
 
-        /*
-         * Перебираем массив и рендерим HTML с данными из массива
-         */
+        // (и этого тогда не нужно делать)
+        // 
+        //  Преобразовываем полученные данные в нормальный массив
+        //  
+        // $users = mysqli_fetch_all($users);
 
-        foreach ($users as $users) {
-            ?>
-            <tr>
-                <td><?= $users[0] ?></td>
-                <td><?= $users[1] ?></td>
-                <td><?= $users[2] ?></td>
-                <td><?= $users[3] ?></td>
-            </tr>
-            <?php
-            }
+
+
+        // (и этого тоже)
+        //
+        // Перебираем массив и рендерим HTML с данными из массива
+        // 
+        // foreach ($users as $users) {
         ?>
+        <!-- <tr>
+                <td><?php //echo $users[0] 
+                    ?></td>
+                <td><?php //echo $users[1] 
+                    ?></td>
+                <td><?php //echo $users[2] 
+                    ?></td>
+                <td><?php //echo $users[3] 
+                    ?></td>
+            </tr> -->
+        <?php
+        // }
+        ?>
+
+
+
+
+
     </table>
 
-    <a href="../../index.php">НАЗАД</a>
+    <p><a href="../../index.php#regaut">НАЗАД</a></p>
 </body>
+
 </html>

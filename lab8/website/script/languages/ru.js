@@ -3,7 +3,7 @@ let ru = {
 
   "chosen-language": "Выбранный язык: Русский",
 
-  "choose-your-lang": "Выберите Ваш язык:",
+  "choose-your-lang": "Язык:",
 
   "check-user-data": "Проверить данные пользователей.",
 

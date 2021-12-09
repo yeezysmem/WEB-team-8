@@ -3,7 +3,7 @@ let uk = {
 
   "chosen-language": "Обрана мова: Українська",
 
-  "choose-your-lang": "Оберіть Вашу мову:",
+  "choose-your-lang": "Мова:",
 
   "check-user-data": "Перевірити дані користувачів.",
 

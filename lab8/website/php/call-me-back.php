@@ -10,11 +10,11 @@
 
 <body>
 
-    <h1>Thank you. You left your application at: </h1>
+    <h1>Thank you. You made your call request at: </h1>
     <h2> <?= date("d.m.Y H:i:s") ?> </h2>
-    <h1>We will call you as soon as possible</h1>
+    <h2>We'll call you back as soon as possible!</h2>
 
-    <a href="../index.php"> Go back </a>
+    <p><a href="../index.php"> Go back </a></p>
 
 </body>
 

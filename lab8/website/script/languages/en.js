@@ -3,7 +3,7 @@ let en = {
 
   "chosen-language": "Chosen language: English",
 
-  "choose-your-lang": "Choose your language:",
+  "choose-your-lang": "Language:",
 
   "check-user-data": "Check user data.",
 

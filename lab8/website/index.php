@@ -2,15 +2,15 @@
 
 require_once 'php/config/connect.php';
 
-if (isset($_COOKIE['lang'])) {
-  $lang = $_COOKIE['lang'];
-} else {
-  $lang = 'en';
-}
+// Начинаем сессию
+session_start([
+  // Stay logged in for an hour
+  'cookie_lifetime' => 3600,
+]);
 
 ?>
 <!DOCTYPE html>
-<html lang="<?= $lang ?>">
+<html lang='<?= $_COOKIE['language'] ?>'>
 
 <head>
   <meta charset="UTF-8" />
@@ -19,10 +19,11 @@ if (isset($_COOKIE['lang'])) {
   <!-- CSS: -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css  " />
+
   <link rel="stylesheet" type="text/css" href="jQuery/jquery-ui.css">
+  <link rel="stylesheet" href="styles/styles.css" />
   <!-- CSS for Flags: -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/css/flag-icons.min.css" integrity="sha512-UwbBNAFoECXUPeDhlKR3zzWU3j8ddKIQQsDOsKhXQGdiB5i3IHEXr9kXx82+gaHigbNKbTDp3VY/G6gZqva6ZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -33,162 +34,271 @@ if (isset($_COOKIE['lang'])) {
   <script src="script/main.js"></script> -->
 
 
-  <!-- JavaScript: -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+  <!-- Scripts: -->
   <script src="script/languages/en.js"></script>
   <script src="script/languages/ru.js"></script>
   <script src="script/languages/uk.js"></script>
 
   <script src="script/lang.js"></script>
+  <!-- ----- -->
 </head>
 
 
 
 
-<body>
-  <!-- 
-В этом файле текст вписан в теги просто чтобы было понятно, 
-где что находится.
+<!-- 
+В этом файле текст, вписанный в теги,
+будет отображаться на странице те миллисекунды, пока подгружаются переводы.
+(или если перевода данного кусочка просто нет)
 
-В них вообще может не быть никакого текста. 
+(То есть этот текст будет заменён на выбранный пользователем язык.)
 
-Текст в них никак не влияет на текст на страничке,
-потому что он берётся из файлов script/languages/*.js -
-то есть заменятся на выбранный пользователем язык.
+Переводы находятся в файлах в папке script/languages/
+
+Чтобы что-то перевести, нужно
+- в этом документе добавить id="..." элементу, внутри которого будет текст 
+(и только текст! всё остальное внутри этого элемента сотрётся!)
+- прописать этот id в файлах папки script/languages/
 -->
 
-  <p id="chosen-language">
-    Chosen language: English;
-  </p>
+<body>
+  <?php include 'php/store/includes/choose-lang.php' ?>
 
-  <!-- Смена Языка -->
-  <div class="flags">
-    <p>
-      <span id="choose-your-lang">Choose your language:</span>
-      <a href="#" onclick="setLanguage('en')"><span class="flag-icon flag-icon-us"></span></a>
-      <a href="#" onclick="setLanguage('ru')"><span class="flag-icon flag-icon-ru"></span></a>
-      <a href="#" onclick="setLanguage('uk')"><span class="flag-icon flag-icon-ua"></span></a>
-    </p>
-  </div>
-  <!-- ----- -->
-
-  <h1 id="greeting" style="clear: both">Hello</h1>
+  <h1 id="greeting">Hello</h1>
 
   <div class="container">
     <img src="images/mainbg.png" id="main-image" />
   </div>
 
 
-  
-<!-- Дальше этого момента не переводил -->
-<!--  -->
-<!--  -->
-<!--  -->
-
-
   <!-- Регистрация и Авторизация -->
-  <section class="regaut">
-    <p>
-      <a href="php/DATA/data.php">
-        <span id="check-user-data">Проверить данные</span> </a>
-    </p>
+  <section class="regaut" id="regaut">
+
+    <!-- Дальше этого момента я не переводил -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+
+
+
+
+
 
     <div class="container">
       <?php
-      if (!isset($_COOKIE['user'])) :
+
+      // if NOT :
+      if (!(
+        (isset($_COOKIE['secret_user_cookie'])) and
+        (isset($_SESSION['secret_user_cookie'])) and
+        ($_COOKIE['secret_user_cookie'] == $_SESSION['secret_user_cookie'])
+      )) {
+
+        // Then we are NOT logged in!
+
       ?>
         <h2>Registration and Authorization</h2>
 
         <div class="row">
           <div class="col">
-            <h4>Registration</h4>
+            <h3>Registration:</h3> <br>
             <form action="php/regaut/reg.php" method="post">
-              <input type="text" name="name" id="name" placeholder="Введите имя"><br><br>
-              <input type="text" name="login" id="login" placeholder="Введите логин"><br><br>
-              <input type="text" name="password" id="password" placeholder="Введите пароль"><br><br>
-              <button type="submit">Регистрация</button>
-            </form>
-          </div>
-          <div class="col">
-            <h4>Authorization</h4>
-            <form action="php/regaut/aut.php" method="post">
-              <p>Введите логин</p>
-              <input type="text" name="login" id="login">
-              <p>Введите пароль</p>
-              <input type="text" name="password" id="password"><br><br>
-              <button type="submit">Авторизация</button>
-            </form>
-          </div>
-        <?php
-      else :
-        ?>
+              <p>Имя</p>
+              <input type="text" name="name" id="name" placeholder="введите Ваше имя" autocomplete="off"><br><br>
 
-          <h1 class="Hi">Добро пожаловать <?= $_COOKIE['user'] ?>!!!</h1>
-          <a href="php/regaut/exit.php">Exit<a>
+              <p>Фамилия</p>
+              <input type="text" name="surname" id="surname" placeholder="введите Вашу фамилию" autocomplete="off"><br><br>
+
+              <p>*Логин</p>
+              <input type="text" name="login" class="login" placeholder="придумайте логин" autocomplete="off" required><br><br>
+
+              <p>*Пароль</p>
+              <input type="password" name="password" placeholder="придумайте пароль" autocomplete="off" class="psw-input" id="set-psw" required><br><br>
+
+              <!-- A checkbox to toggle between password visibility -->
+              <div>
+                <input type="checkbox" onclick="togglePswVisibl('set-psw')" id="set-passw-chkbx">
+                <label for="set-passw-chkbx">Show Password</label>
+              </div>
+
+              <input type="submit" class="button" value="Регистрация"></input>
+
+            </form>
 
             <?php
-          endif;
+            if (isset($_GET['registered'])) {
+              if ($_GET['registered'] == 'success') {
+                echo '<h2>You have been SUCCESSFULLY Registered!</h2>';
+              } else {
+                echo '<p>You were NOT Registered!</p>';
+                echo "<p><b>MySQL Error:</b> "
+                  . str_replace('|', ' ', $_GET['error'])
+                  . "</p>";
+              }
+            }
             ?>
+          </div>
+
+
+          <div class="col">
+            <h3>Authorization:</h3> <br>
+            <form action="php/regaut/aut.php" method="post">
+              <p>*Логин</p>
+              <input type="text" name="login" class="login" placeholder="Ваш логин" autocomplete="off" required>
+
+              <p>*Пароль</p>
+              <input type="password" name="password" placeholder="Ваш пароль" autocomplete="off" class="psw-input" id="enter-psw" required><br><br>
+
+              <!-- A checkbox to toggle between password visibility -->
+              <div>
+                <input type="checkbox" onclick="togglePswVisibl('enter-psw')" id="entr-passw-chkbx">
+                <label for="entr-passw-chkbx">Show Password</label>
+              </div>
+
+              <input type="submit" class="button" value="Авторизация"></input>
+            </form>
+          </div>
+
+
+          <!-- Скрывать / показывать пароль -->
+          <script>
+            function togglePswVisibl(id) {
+              let psw = document.getElementById(id);
+              if (psw.type === "password") {
+                psw.type = "text";
+              } else {
+                psw.type = "password";
+              }
+            }
+          </script>
+
+          <!-- Проверка на неверно введённые логин и пароль -->
+          <?php
+          if (isset($_GET['login-attempt']) and $_GET['login-attempt'] == 'failed') {
+            echo "<h3 style=\"color:pink\">Пользователь не найден! Неверный логин или пароль. Попробуйте ещё раз.</h3>";
+          }
+        } else {
+
+
+          // ELSE..
+
+
+
+          // We are LOGGED IN !
+
+
+
+
+          // Welcome user
+          echo "<h2> <span id=\"logged_in_welcome\"> Добро пожаловать, </span>";
+
+          // User name CAN BE NULL:        
+          if (!(isset($_COOKIE['user'])) or !$_COOKIE['user']) {
+            // Пользователь не задал своего имени
+            echo "<span id=\"logged_in_user\">  дорогой пользователь  <span>";
+          } else {
+            // У пользователя задано имя
+            echo $_COOKIE['user'];
+          }
+          echo "!!! </h2>"; // the closing tag
+
+
+
+          // Check if the user is admin:
+          if ($_SESSION["user_is_admin"] == '1') {
+            echo "<h2> You are the admin! </h2>";
+
+            // Admin panel link:
+            echo " <a href=\"php/store/admin/admin-panel.php\" class=\"button\">
+            Manage products
+            </a>"; ?>
+
+            <!-- Просмотреть таблицу всех зарегистрированных пользователей -->
+            <p>
+              <a href="php/DATA/data.php" class="button">
+                <span id="check-user-data">Проверить данные пользователей</span>
+              </a>
+            </p>
+
+        <?php
+          }
+
+
+          // Log out button
+          echo "<a href=\"php/regaut/exit.php\" class=\"button\"> Log out <a>";
+        }
+        ?>
+
         </div>
   </section>
 
+
+
+  <!-- Categories of products -->
   <section class="categories">
 
     <div class="container">
       <h2>Categories</h2>
       <div class="row" style="display: flex; justify-content: space-between; margin: 100px 0;">
-
+        
         <div class="categories-item">
-          <div class="categories-item__content">
-            <div class="categories-item__content-name">Monitors</div>
-            <div class="categories-item__content-arrow">
-              <a href="monitors.php"><img src="images/arrow-right.svg" alt=""></a>
+          <a href="php/store/choose-goods.php?category=monitor">
+            <div class="categories-item__content">
+              <div class="categories-item__content-name">Monitors</div>
+              <div class="categories-item__content-arrow">
+                <img src="images/arrow-right.svg" alt="">
+              </div>
             </div>
-          </div>
-          <div class="categories-item__monitor">
-            <img src="images/monitor.png" alt="">
-          </div>
+            <div class="categories-item__monitor">
+              <img src="images/monitor.png" alt="">
+            </div>
+          </a>
         </div>
 
         <div class="categories-item">
-          <div class="categories-item__content">
-            <div class="categories-item__content-name">Motherboards</div>
-            <div class="categories-item__content-arrow">
-              <img src="images/arrow-right.svg" alt="">
+          <a href="php/store/choose-goods.php?category=motherboard">
+            <div class="categories-item__content">
+              <div class="categories-item__content-name">Motherboards</div>
+              <div class="categories-item__content-arrow">
+                <img src="images/arrow-right.svg" alt="">
+              </div>
             </div>
-          </div>
-          <div class="categories-item__motherboard">
-            <img src="images/Motherboard.png" alt="">
-          </div>
+            <div class="categories-item__motherboard">
+              <img src="images/Motherboard.png" alt="">
+            </div>
+          </a>
         </div>
 
         <div class="categories-item">
-          <div class="categories-item__content">
-            <div class="categories-item__content-name">Components</div>
-            <div class="categories-item__content-arrow">
-              <img src="images/arrow-right.svg" alt="">
+          <a href="php/store/choose-goods.php?category=component">
+            <div class="categories-item__content">
+              <div class="categories-item__content-name">Components</div>
+              <div class="categories-item__content-arrow">
+                <img src="images/arrow-right.svg" alt="">
+              </div>
             </div>
-          </div>
-          <div class="categories-item__components">
-            <img src="images/Components.png" alt="">
-          </div>
+            <div class="categories-item__components">
+              <img src="images/Components.png" alt="">
+            </div>
+          </a>
         </div>
 
         <div class="categories-item">
-          <div class="categories-item__content">
-            <div class="categories-item__content-name">Laptops</div>
-            <div class="categories-item__content-arrow">
-              <img src="images/arrow-right.svg" alt="">
+          <a href="php/store/choose-goods.php?category=laptop">
+            <div class="categories-item__content">
+              <div class="categories-item__content-name">Laptops</div>
+              <div class="categories-item__content-arrow">
+                <img src="images/arrow-right.svg" alt="">
+              </div>
             </div>
-          </div>
-          <div class="categories-item__laptop">
-            <img src="images/laptop.png" alt="">
-          </div>
+            <div class="categories-item__laptop">
+              <img src="images/laptop.png" alt="">
+            </div>
+          </a>
         </div>
 
-        <a href="php/goods.php?category=desktops">
-          <div class="categories-item">
+        <div class="categories-item">
+          <a href="php/store/choose-goods.php?category=desktop">
             <div class="categories-item__content">
               <div class="categories-item__content-name">
                 Desktop-PC
@@ -200,8 +310,8 @@ if (isset($_COOKIE['lang'])) {
             <div class="categories-item__pc">
               <img src="images/Desktop-PC.png" alt="">
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
 
   </section>
 
@@ -213,6 +323,10 @@ if (isset($_COOKIE['lang'])) {
 
 
 
+  <!-- Footer -->
+  <br><br>
+  <hr>
+  <br><br>
   <p>
     <label for="amount">Price range:</label>
     <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">

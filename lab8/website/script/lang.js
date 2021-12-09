@@ -29,15 +29,23 @@ function setCookie(cname, cvalue, exdays) {
 
 
 
-// On document load:
-$(document).ready(function () {
-  // Get current language:
-  let currentLanguage = getCookie('language');
-  if (currentLanguage == "") {
-    currentLanguage = 'en';
-  }
+// Wait until the document is loaded:
+// (and also wait for 'php/store/includes/choose-lang.php' to be included)
+document.addEventListener("DOMContentLoaded", function () {
+  let checkExist = setInterval(function () {
+    if ($('#choose-your-lang').length) {
+      clearInterval(checkExist);
 
-  setLanguage(currentLanguage);
+      // Get current language:
+      let currentLanguage = getCookie('language');
+      if (currentLanguage == "") {
+        currentLanguage = 'en';
+      }
+
+      setLanguage(currentLanguage);
+
+    }
+  }, 200); // check every 200ms
 });
 
 
