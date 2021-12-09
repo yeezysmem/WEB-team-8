@@ -126,6 +126,7 @@ session_start([
 
             </form>
 
+            <!-- Feedback after trying to register -->
             <?php
             if (isset($_GET['registered'])) {
               if ($_GET['registered'] == 'success') {
@@ -158,81 +159,123 @@ session_start([
 
               <input type="submit" class="button" value="Авторизация"></input>
             </form>
-          
 
 
-          <!-- Скрывать / показывать пароль -->
-          <script>
-            function togglePswVisibl(id) {
-              let psw = document.getElementById(id);
-              if (psw.type === "password") {
-                psw.type = "text";
-              } else {
-                psw.type = "password";
+
+            <!-- Скрывать / показывать пароль -->
+            <script>
+              function togglePswVisibl(id) {
+                let psw = document.getElementById(id);
+                if (psw.type === "password") {
+                  psw.type = "text";
+                } else {
+                  psw.type = "password";
+                }
               }
-            }
-          </script>
+            </script>
 
-          <!-- Проверка на неверно введённые логин и пароль -->
-          <?php
-          if (isset($_GET['login-attempt']) and $_GET['login-attempt'] == 'failed') {
-            echo "<h3 style=\"color:pink\">Пользователь не найден! Неверный логин или пароль. Попробуйте ещё раз.</h3>";
-          } ?>
+            <!-- Проверка на неверно введённые логин и пароль -->
+            <?php
+            if (isset($_GET['login-attempt']) and $_GET['login-attempt'] == 'failed') {
+              echo "<h3 style=\"color:pink\">Пользователь не найден! Неверный логин или пароль. Попробуйте ещё раз.</h3>";
+            } ?>
           </div>
-          <?php
-        } else {
-
-
-          // ELSE..
-
-
-
-          // We are LOGGED IN !
-
-
-
-
-          // Welcome user
-          echo "<h2> <span id=\"logged_in_welcome\"> Добро пожаловать, </span>";
-
-          // User name CAN BE NULL:        
-          if (!(isset($_COOKIE['user'])) or !$_COOKIE['user']) {
-            // Пользователь не задал своего имени
-            echo "<span id=\"logged_in_user\">  дорогой пользователь  <span>";
-          } else {
-            // У пользователя задано имя
-            echo $_COOKIE['user'];
-          }
-          echo "!!! </h2>"; // the closing tag
-
-
-
-          // Check if the user is admin:
-          if ($_SESSION["user_is_admin"] == '1') {
-            echo "<h2> You are the admin! </h2>";
-
-            // Admin panel link:
-            echo " <a href=\"php/store/admin/admin-panel.php\" class=\"button\">
-            Manage products
-            </a>"; ?>
-
-            <!-- Просмотреть таблицу всех зарегистрированных пользователей -->
-            <p>
-              <a href="php/DATA/data.php" class="button">
-                <span id="check-user-data">Проверить данные пользователей</span>
-              </a>
-            </p>
-
         <?php
-          }
+      } else {
 
 
-          // Log out button
-          echo "<a href=\"php/regaut/exit.php\" class=\"button\"> Log out <a>";
+        // ELSE..
+
+
+
+        // We are LOGGED IN !
+
+
+
+
+        // Welcome user
+        echo "<h2> <span id=\"logged_in_welcome\"> Добро пожаловать, </span>";
+
+        // User name CAN BE NULL:        
+        if (!(isset($_COOKIE['user'])) or !$_COOKIE['user']) {
+          // Пользователь не задал своего имени
+          echo "<span id=\"logged_in_user\">  дорогой пользователь  <span>";
+        } else {
+          // У пользователя задано имя
+          echo $_COOKIE['user'];
         }
+        echo "!!! </h2>"; // the closing tag
         ?>
 
-        </div>
+
+
+          <div class="row">
+            <div class="col">
+              <!-- Check if the user is admin: -->
+
+              <?php
+              if ($_SESSION["user_is_admin"] == '1') { ?>
+                <h2> You are the admin! </h2>
+
+                <!-- Admin panel link: -->
+                <a href="php/store/admin/admin-panel.php" class="button">
+                  Manage products
+                </a>
+
+                <!-- Просмотреть таблицу всех зарегистрированных пользователей -->
+                <p>
+                  <a href="php/DATA/data.php" class="button">
+                    <span id="check-user-data">Проверить данные пользователей</span>
+                  </a>
+                </p>
+              <?php
+              }
+              ?>
+            </div>
+
+            <div class="col">
+              <!-- 
+            Logged-in users can authorise to another account immediately
+            (without the need to manually logging out) 
+            -->
+              <h3>Quick Authorization:</h3> <br>
+              <form action="php/regaut/aut.php" method="post">
+                <p>*Логин</p>
+                <input type="text" name="login" class="login" placeholder="Ваш логин" autocomplete="off" required value="<?= $_SESSION['last_entered_login'] ?>">
+
+                <p>*Пароль</p>
+                <input type="password" name="password" placeholder="Ваш пароль" autocomplete="off" class="psw-input" id="enter-psw" required value="<?= $_SESSION['last_entered_password'] ?>"><br><br>
+
+                <!-- A checkbox to toggle between password visibility -->
+                <div>
+                  <input type="checkbox" onclick="togglePswVisibl('enter-psw')" id="entr-passw-chkbx">
+                  <label for="entr-passw-chkbx">Show Password</label>
+                </div>
+
+                <!-- Скрывать / показывать пароль -->
+                <script>
+                  function togglePswVisibl(id) {
+                    let psw = document.getElementById(id);
+                    if (psw.type === "password") {
+                      psw.type = "text";
+                    } else {
+                      psw.type = "password";
+                    }
+                  }
+                </script>
+
+                <input type="submit" class="button" value="Авторизация"></input>
+              </form>
+
+              <!-- Log out button -->
+              <a href="php/regaut/exit.php" class="button"> Log out <a>
+            </div>
+
+
+            <!--End of the LOGGED IN Part -->
+          <?php } ?>
+
+          </div>
   </section>
 
 
@@ -243,7 +286,7 @@ session_start([
     <div class="container">
       <h2>Categories</h2>
       <div class="row" style="display: flex; justify-content: space-between; margin: 100px 0;">
-        
+
         <div class="categories-item">
           <a href="php/store/choose-goods.php?category=monitor">
             <div class="categories-item__content">

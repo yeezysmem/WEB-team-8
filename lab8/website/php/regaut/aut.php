@@ -32,6 +32,9 @@ if (is_null($user) or count($user) == 0) {
         'cookie_lifetime' => 3600,
     ]);
     // Set session variables
+    $_SESSION["last_entered_login"] = $login;
+    $_SESSION["last_entered_password"] = $password;
+
     $_SESSION["user_id"] = $user['id'];
     $_SESSION["user_is_admin"] = $user['is_admin'];
     $_SESSION["secret_user_cookie"] = generateRandomString(32);
