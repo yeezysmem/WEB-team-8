@@ -207,7 +207,7 @@ session_start([
         echo "!!! </h2>"; // the closing tag
         ?>
 
-
+        
 
           <div class="row">
             <div class="col">
@@ -483,6 +483,12 @@ session_start([
         <div>Keyboards</div>
       </li>
     </ul>
+  </div>
+
+  <div id="welcome">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" placeholder="Например, Иван">
+        <button id="send">Отправить</button>
   </div>
 
   <div class="social">
