@@ -36,5 +36,210 @@
     <img src="../../img, etc/lab9 screenshots/messagges.png">
     <p>Замість XML було вирішено зберігати листи у базі даних, яка виглядає так</p>
     <img src="../../img, etc/lab9 screenshots/db.png">
+    <br/>
+    <h2> Варіант 9 Персоналізація сторіник</h2>
+        <p>
+            <b>Реалізувати можливість персоналізації сторінки за запитом користувача. Передбачити можливість зміни фонового зображення сторінки, шрифту текстових фрагментів та заголовків сторінки. Крім того, дозволити користувачам створювати нові стилі, на основі передбачених властивостей. Дані зберігати в XML-файлі на сервері. Операції пересилання даних виконувати асинхронно. </b>
+        </p> </br>
+    <h2>Реалізація</h2>
+    <h2>Головна сторінка (Вигляд у застосунку загрузки картинок)</h2>
+    <img src="../../img, etc/lab9 screenshots/upload.png">
+    <h2>php код</h2>
+    <xmp>
+        // Проверяем установлен ли массив файлов и массив с переданными данными
+if(isset($_FILES) && isset($_FILES['image'])) {
+ 
+  //Переданный массив сохраняем в переменной
+  $image = $_FILES['image'];
+ 
+  // Проверяем размер файла и если он превышает заданный размер
+  // завершаем выполнение скрипта и выводим ошибку
+  if ($image['size'] > 200000) {
+    die('error');
+  }
+ 
+  // Достаем формат изображения
+  $imageFormat = explode('.', $image['name']);
+  $imageFormat = $imageFormat[1];
+ 
+  // Генерируем новое имя для изображения. Можно сохранить и со старым
+  // но это не рекомендуется делать
+  $imageFullName = './images/' . hash('crc32',time()) . '.' . $imageFormat;
+ 
+  // Сохраняем тип изображения в переменную
+  $imageType = $image['type'];
+ 
+  // Сверяем доступные форматы изображений, если изображение соответствует,
+  // копируем изображение в папку images
+  if ($imageType == 'image/jpeg' || $imageType == 'image/png') {
+    if (move_uploaded_file($image['tmp_name'],$imageFullName)) {
+      echo 'success';
+    } else {
+      echo 'error';
+    }
+  }
+}
+    </xmp>
+    <h2>html код</h2>
+    <xmp>
+        <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ajax Upload</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="ajaxupload.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h1>Image upload</h1>
+          <div class="image-preview">
+            <img id="preview" src="" alt="">
+          </div>
+          <form id="upload-image" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="image">Image file:</label>
+              <input type="file" name="image" id="image">
+            </div>
+            <input type="submit" class="btn btn-default">
+          </form>
+          <div id="result">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+    </xmp>
+
+
+    <h2>js код</h2>
+    <xmp>
+        $(document).ready(function () {
+ 
+            function readImage ( input ) {
+              if (input.files && input.files[0]) {
+                var reader = new FileReader();
+           
+                reader.onload = function (e) {
+                  $('#preview').attr('src', e.target.result);
+                }
+           
+                reader.readAsDataURL(input.files[0]);
+              }
+            }
+           
+            function printMessage(destination, msg) {
+           
+              $(destination).removeClass();
+           
+              if (msg == 'success') {
+                $(destination).addClass('alert alert-success').text('Файл успешно загружен.');
+              }
+           
+              if (msg == 'error') {
+                $(destination).addClass('alert alert-danger').text('Произошла ошибка при загрузке файла.');
+              }
+           
+            }
+           
+            $('#image').change(function(){
+              readImage(this);
+            });
+           
+            $('#upload-image').on('submit',(function(e) {
+              e.preventDefault();
+           
+              var formData = new FormData(this);
+           
+              $.ajax({
+                type:'POST', // Тип запроса
+                url: 'handler.php', // Скрипт обработчика
+                data: formData, // Данные которые мы передаем
+                cache:false, // В запросах POST отключено по умолчанию, но перестрахуемся
+                contentType: false, // Тип кодирования данных мы задали в форме, это отключим
+                processData: false, // Отключаем, так как передаем файл
+                success:function(data){
+                  printMessage('#result', data);
+                },
+                error:function(data){
+                  console.log(data);
+                }
+              });
+              
+            }));
+          });
+    </xmp>
+    </br>
+    <h2>Динамічна зміна контенту без перезагрузки за допомогою AJAX</h2>
+    <img src="../../img, etc/lab9 screenshots/project1.png">
+    <h2>html код</h2>
+    <xmp>
+        
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">
+    <script type="text/javascript" src="jquery.js"></script>
+    </head>
+    
+    <body>
+        
+        <p>Какую страницу желаете открыть?</p>
+        <form>
+            <input id="btn1" type="button" value="Страница 1"> <input id="btn2" type="button" value="Страница 2">
+        </form>
+        <div id="content"></div>
+        
+        <script>
+            $(document).ready(function(){
+            
+                $('#btn1').click(function(){
+                    $.ajax({
+                        url: "page1.html",
+                        cache: false,
+                        success: function(html){
+                            $("#content").html(html);
+                        }
+                    });
+                });
+                
+                $('#btn2').click(function(){
+                    $.ajax({
+                        url: "page2.html",
+                        cache: false,
+                        success: function(html){
+                            $("#content").html(html);
+                        }
+                    });
+                });
+                
+            });
+        </script>
+        
+    </body>
+    </html>
+    </xmp>
+    <h2>page1 code</h2>
+    <xmp>
+        <h1>Страница 1</h1>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum leo metus, convallis sollicitudin, eleifend vitae, pellentesque quis, tortor. Nam mauris massa, egestas at, cursus id, porta suscipit, orci. Donec convallis, nisl ultrices consequat feugiat, quam purus vulputate sem, mollis dictum magna enim nec ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper felis vel orci. Pellentesque metus quam, gravida non, bibendum a, convallis at, turpis. Mauris id eros. Praesent mauris nunc, fringilla vel, gravida et, sodales in, neque. Donec lacinia dolor eget massa. Sed urna. Aenean sed elit non massa placerat vehicula. Sed pulvinar, nibh non iaculis lacinia, urna eros pulvinar felis, et pretium sapien est at libero.</p>
+
+<p>Vivamus arcu mi, posuere sed, hendrerit ac, auctor quis, lectus. Sed tristique elementum augue. Sed laoreet leo vel eros. Duis a velit. Etiam vestibulum sodales massa. Curabitur pretium diam vitae turpis. Quisque volutpat, enim et iaculis pulvinar, justo diam viverra metus, fermentum malesuada tellus elit sit amet purus. Aenean rhoncus tincidunt massa. Cras orci ligula, luctus eget, iaculis egestas, aliquam tempus, odio. Pellentesque lorem magna, suscipit a, fringilla id, pellentesque vitae, elit. Vivamus magna sapien, molestie id, varius a, vulputate eget, leo. Fusce et lacus. Cras quis dolor. Quisque diam. Fusce velit. </p>
+    </xmp>
+    <h2>page2 code</h2>
+    <xmp>
+        <h1>Страница 2</h1>
+
+<p>Nulla bibendum, nibh vitae rutrum lobortis, nisl lectus tempus tortor, in dapibus tellus tortor sit amet nunc. Sed sed elit et arcu varius mattis. Vivamus eu justo. Sed quam massa, commodo fermentum, commodo id, adipiscing at, turpis. In consequat elementum lectus. Duis eu ante quis velit vulputate porttitor. Etiam sit amet lectus. Donec ac massa. Aliquam erat volutpat. Duis venenatis odio mattis magna. Sed bibendum malesuada turpis. Cras tempor. Vestibulum scelerisque neque eget purus. Pellentesque dolor libero, placerat sed, consectetur sed, volutpat nec, leo. Aliquam erat volutpat. Donec rhoncus. Fusce quis justo sit amet est blandit ullamcorper. Suspendisse nunc. Nam vel ligula.</p>
+
+<p>Pellentesque mauris. Phasellus lectus metus, eleifend aliquam, mattis et, convallis ut, lectus. In hac habitasse platea dictumst. Vestibulum sem est, posuere sit amet, porttitor quis, adipiscing eu, quam. Vivamus in nulla. Pellentesque nec enim. In a quam sit amet risus sodales egestas. Ut mollis odio quis massa. Nullam volutpat, nulla sit amet tincidunt accumsan, enim sapien pretium ipsum, ut mollis erat diam et turpis. Vestibulum nisl. Pellentesque vehicula purus ac lectus. Sed hendrerit odio id dolor. Nullam nec augue posuere est bibendum sollicitudin. Phasellus lacus quam, vulputate sed, euismod in, dignissim vitae, ligula. Sed vitae neque ac neque vehicula hendrerit. Aliquam tincidunt augue at tortor. Nullam dolor. Etiam blandit, mauris ullamcorper laoreet eleifend, augue lacus venenatis nunc, elementum suscipit eros eros ut mauris.</p>
+
+<p>Nulla fermentum gravida augue. Nunc ipsum sapien, blandit quis, dictum eu, eleifend ac, urna. Integer commodo est ut sem facilisis facilisis. Morbi sagittis justo ac felis. Donec lorem est, vulputate a, auctor vel, lobortis quis, massa. Nulla quis leo. Curabitur turpis tortor, luctus at, accumsan at, varius eu, quam. Ut ornare tellus non ipsum. Vestibulum velit. Nam est mauris, gravida ut, dictum id, hendrerit nec, magna. In rutrum leo sed tortor. </p>
+    </xmp>
 </body>
 </html>
