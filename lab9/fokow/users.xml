@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE users>
+
+<users>
+    <user>
+        <username>vova</username>
+        <password>12345</password>
+        <email>email-01@gmail.com</email>
+        <name>Vladimir</name>
+        <status>Gold</status>
+    </user>
+
+    <user>
+        <username>anna</username>
+        <password>2</password>
+        <email>email-02@gmail.com</email>
+        <name>Anna</name>
+        <status>Silver</status>
+    </user>
+
+    <user>
+        <username>masha</username>
+        <password>3</password>
+        <email>email-03@gmail.com</email>
+        <name>Maria</name>
+        <status>Bronze</status>
+    </user>
+</users>

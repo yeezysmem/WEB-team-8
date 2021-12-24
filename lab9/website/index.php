@@ -9,8 +9,15 @@ session_start([
 ]);
 
 ?>
+
 <!DOCTYPE html>
-<html lang='<?= $_COOKIE['language'] ?>'>
+<html lang='
+<?php if (isset($_COOKIE['language'])) { 
+  echo $_COOKIE['language'];
+} else {
+  echo "en";
+} ?>
+'>
 
 <head>
   <meta charset="UTF-8" />
@@ -236,7 +243,7 @@ session_start([
             <div class="col">
               <!-- 
             Logged-in users can authorise to another account immediately
-            (without the need to manually logging out) 
+            (without the need to manually log out) 
             -->
               <h3>Quick Authorization:</h3> <br>
               <form action="php/regaut/aut.php" method="post">
@@ -246,13 +253,13 @@ session_start([
                 <p>*Пароль</p>
                 <input type="password" name="password" placeholder="Ваш пароль" autocomplete="off" class="psw-input" id="enter-psw" required value="<?= $_SESSION['last_entered_password'] ?>"><br><br>
 
-                <!-- A checkbox to toggle between password visibility -->
+                <!-- Скрывать / Показывать пароль -->
                 <div>
                   <input type="checkbox" onclick="togglePswVisibl('enter-psw')" id="entr-passw-chkbx">
                   <label for="entr-passw-chkbx">Show Password</label>
                 </div>
 
-                <!-- Скрывать / показывать пароль -->
+                <!-- JavaScript: скрывать/показывать пароль -->
                 <script>
                   function togglePswVisibl(id) {
                     let psw = document.getElementById(id);

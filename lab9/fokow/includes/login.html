@@ -1,0 +1,14 @@
+<form id="log-in-form" method="post">
+    <input type="text" id="username" name='username' placeholder="username" autocomplete="off"> <!-- required> -->
+    <input type='password' id="password" name="password" placeholder="password" autocomplete="off"> <!-- required> -->
+
+    <div>
+        <input type="checkbox" onclick="togglePswVisibl('#password')" id="checkbox-toggle">
+        <label for="checkbox-toggle">Show Password</label>
+    </div>
+
+    <input type="submit" id="submit-log-in" value="Log in">
+    <input type="submit" id="submit-create-user" value="Сreate user">
+</form>
+
+<p id="log-in-error"></p>
